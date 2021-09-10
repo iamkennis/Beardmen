@@ -1,0 +1,184 @@
+header {
+  background-color:  #006e7c;
+  height: 36rem;
+}
+
+.header {
+  padding-top: 1rem;
+  padding-left: 6rem;
+}
+
+.header--h1 {
+  color: white;
+  min-width: 4rem;
+  font-size: 4rem;
+}
+
+.header--p {
+  color: white;
+  font-size: 16px;
+  max-width: 15rem;
+  padding-top: 2rem;
+  line-height: 1.5;
+}
+
+.header--btn {
+  
+  margin-top: 1.3rem;
+}
+
+
+.header--img {
+  height: 29rem;
+  position: absolute;
+  left: 28rem;
+  top: 8rem;
+  
+  
+}
+
+
+@media(max-width:1200px) {
+  header {
+    height: 30rem;
+  }
+.header--img {
+  height: 25rem; 
+  bottom: 7rem;
+  left: 22rem;
+}
+
+.header--h1 {
+  font-size: 4rem;
+}
+
+.header {
+  padding-top: 1.3rem;
+  padding-left: 2rem;
+}
+}
+
+@media(max-width:992px) {
+  .header--img {
+   height: 20rem; 
+  bottom: 14rem;
+  left: 23rem;
+}
+
+.header {
+  padding-top: 5rem;
+  padding-left: 5rem;
+}
+.header--h1 {
+  font-size: 3.2rem;
+}
+
+.header--p {
+  font-size: 14px;
+}
+
+.header--btn {
+  padding: 0.7rem;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+}
+
+@media(max-width:868px) {
+     .header--img {
+   height: 18rem; 
+  bottom: 13rem;
+  left: 19rem;
+}
+.header--h1 {
+  font-size: 3rem;
+}
+
+.header {
+  padding-top: 7.5rem;
+  padding-left: 2rem;
+}
+
+.header--p {
+  font-size: 14px;
+  max-width: 14rem;
+}
+
+}
+
+@media(max-width:768px) {
+     .header--img {
+   height: 16rem; 
+  bottom: 14rem;
+  left: 15rem;
+}
+.header--h1 {
+  font-size: 2.4rem;
+}
+
+.header {
+  padding-top: 8.5rem;
+  padding-left: 2rem;
+}
+
+.header--p {
+  font-size: 14px;
+  max-width: 10rem;
+}
+   
+}
+
+
+@media(max-width:576px) {
+  header {
+  height: 40rem;
+}
+   .header--img {
+   display: none;
+}
+
+.header {
+  padding-top: 8.5rem;
+  padding-left: 5rem;
+}
+
+.header--h1 {
+  font-size: 3.5rem;
+}
+
+.header--p {
+  font-size: 18px;
+  max-width: 18rem;
+}
+
+.header--btn {
+  padding: 0.8rem;
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+}
+
+@media(max-width:376px) {
+.header--h1 {
+  font-size: 2.8rem;
+}
+
+.header--p {
+  font-size: 14px;
+  max-width: 12rem;
+}
+.header {
+  padding-left: 2rem;
+}
+
+.header--btn {
+  padding: 0.6rem;
+  color: #ffffff;
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding-left: 0.2rem;
+}
+}

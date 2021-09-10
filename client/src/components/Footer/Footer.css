@@ -1,0 +1,32 @@
+footer {
+    background-color:  #005661;
+    min-height: 10rem;
+}
+
+li {
+    list-style: none;
+    padding: 0.5rem;
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 5rem;  
+}
+
+
+.footer--icon {
+     margin-top: 7rem;
+}
+
+.icon--color {
+    color: #ffffff;
+    cursor: pointer;
+    margin: 1.1rem;
+    font-size: 1.2rem;
+}
+
+.icon--color:hover{
+    color:#00a7bd;
+}

@@ -1,0 +1,35 @@
+{
+  "name": "beardmen",
+  "version": "1.0.0",
+  "description": "an ecommerce for beard products",
+  "main": "app.js",
+  "scripts": {
+    "build": "cd client && npm run build",
+    "start": "node server",
+    "server": "nodemon server",
+    "client": "npm start",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "prod": "NODE_ENV=production nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamkennis/beardmen.git"
+  },
+  "author": "Amodu Kehinde",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iamkennis/beardmen/issues"
+  },
+  "homepage": "https://github.com/iamkennis/beardmen#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "concurrently": "^6.2.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.13.7",
+    "slugify": "^1.6.0",
+    "stripe": "8.172.0",
+    "validator": "^13.6.0"
+  }
+}

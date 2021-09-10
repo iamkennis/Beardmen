@@ -1,0 +1,87 @@
+.signin--box {
+  background-color: #f1e3d1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 40%;
+  padding: 4rem 18rem;
+}
+
+.sign--h1 {
+  font-size: 2.1rem;
+  text-align: center;
+}
+
+.sign--p {
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.sign--email input {
+  font-size: 1.7rem;
+  padding: 0.4rem;
+  border: 1px solid #000000;
+}
+
+.sign--password input {
+  font-size: 1.7rem;
+  padding: 0.5rem;
+  border: 1px solid #000000;
+}
+
+.form--p {
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-top: 0.8rem;
+  margin-bottom: 0.6rem;
+  color: #0e0e41;
+}
+
+.form--btn {
+  text-align: center;
+   margin-top: 0.9rem;
+}
+
+
+.form--btn-social-go {
+  padding: 0.6rem 11.8rem;
+  margin-top: 1.5rem;
+  background-color: blue;
+  opacity: 1;
+  color: #ffeea4;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.form--btn-social-fb {
+  padding: 0.6rem 11.4rem;
+  margin-top: 0.5rem;
+  background-color: #000072;
+  opacity: 1;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn--social {
+  padding-left: 0.5rem;
+}
+
+.forget--links {
+  padding-top: 1.5rem;
+}
+.forget--link {
+  color: black;
+  text-decoration: underline;
+}
+
+.forget--link:hover {
+  color: black;
+}
+
+.signup--link {
+  padding-top: 0.9rem;
+}

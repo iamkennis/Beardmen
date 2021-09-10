@@ -1,0 +1,27 @@
+/* 
+.icon--link {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  padding: 1.5rem;
+} */
+
+
+.icon--cart {
+  font-size: 25px;
+  color: white;
+  cursor: pointer;
+}
+
+.icon--number {
+    background-color: #db03c9;
+    color:white;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 3px;
+    border-radius: 25px;
+    position: relative;
+    right:10px;
+    bottom: 16px;
+}
