@@ -6,7 +6,7 @@ const INITIAL_STATE = {
 }
 
 
-const productsReducer = (state = INITIAL_STATE, action) => {
+const productReducer = (state = INITIAL_STATE, action) => {
     switch (action.type){
         case ProductActionTypes.GET_PRODUCT:
             return {
@@ -35,4 +35,4 @@ const productsReducer = (state = INITIAL_STATE, action) => {
     
 }
 
-export default productsReducer
+export default productReducer

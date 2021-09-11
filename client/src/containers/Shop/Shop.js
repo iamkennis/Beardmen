@@ -55,7 +55,7 @@ function Shop ({ product}) {
                     </div>
                     <div className='shop--list'>
                         
-                    <Product key={product._id} product={ product } />
+                        <Product product={product}/>
                         
                        
                     </div> 
