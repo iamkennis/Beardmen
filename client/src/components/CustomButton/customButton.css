@@ -1,0 +1,36 @@
+button{
+  min-width: 150px;
+  width: auto;
+  height:  55px;
+  background-color:#319c00;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  font-size: 16px;
+  font-weight: bolder;
+  border: none;
+  border-radius: 5px;
+  padding: 0 35px 0 35px;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+button:hover {
+   background-color:#2d8d00;
+}
+
+@media(max-width:992px) {
+   button{
+     padding: 0 20px 0 20px;
+     min-width: 130px;
+     font-size: 14px;
+   }
+}
+
+@media(max-width:376px) {
+  button{
+     padding: 0 10px 0 10px;
+     min-width: 100px;
+     height:  45px;
+     font-size: 14px;
+   }
+}

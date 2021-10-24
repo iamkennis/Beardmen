@@ -14,6 +14,15 @@ const productSchema = new mongoose.Schema({
     
 });
 
+
+// productSchema.pre(/^find/, function (next) {
+//   this.populate({
+//     path: 'user',
+//     select: '-__v',
+//   });
+//   next();
+// });
+
 const Product = mongoose.model("Product", productSchema);
 
 module.exports = Product

@@ -1,11 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+
 const AppError = require('./utils/appError');
 const globalError = require('./controller/errorController')
 const prouductRouter = require('./routes/productRoute');
 const userRouter = require('./routes/userRoute');
 const cartRouter = require('./routes/cartRoute')
-
 
 const app = express();
 
@@ -31,11 +32,13 @@ app.use(express.static((__dirname, '../client/build')));
 //    next() 
 // })
 
-app.use(bodyParser.json()) 
+app.use(bodyParser.json());
+app.use(cookieParser()) 
 // ROUTE
 app.use('/api/products', prouductRouter);
 app.use('/api/users', userRouter);
-app.use('/api/cart', cartRouter)
+app.use('/api/carts', cartRouter)
+
 
 app.all('*', (req, res, next) => {
     next(new AppError(`Can't find ${req.originalUrl} on this server.`, 404))

@@ -4,7 +4,7 @@ const catchAsync = require('../utils/catchAsync');
 exports.getAllProduct = catchAsync(async (req, res, next) => {
 const products = await Product.find()
         res.status(200).json({
-            status: 'sucess',
+            status: 'success',
             results: products.length,
             data: {
                 products
@@ -13,7 +13,7 @@ const products = await Product.find()
 })
 
 exports.getProduct = catchAsync(async (req, res, next) => {
-   const product = await Product.findById(req.params.id);
+    const product = await Product.findById(req.params.id);
  
         res.status(200).json({
             status: 'success',

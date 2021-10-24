@@ -15,7 +15,7 @@
   height: 64px;
   margin: 8px;
   border-radius: 50%;
-  border: 6px solid #cef;
+  border: 6px solid rgb(0, 170, 255);
   border-color: #cef transparent #cef transparent;
   animation: spinner-dual-ring 1.2s linear infinite;
 }
