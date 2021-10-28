@@ -11,7 +11,7 @@ function Header (props) {
                 <p className='header--p'>Tell us how you get invovle in grooming and we’ll recommend the perfect products</p>
                 <section className='header--btn'>
                     <Link to='/shop'>
-                        <CustomButton>Show Now</CustomButton>
+                        <CustomButton>Shop Now</CustomButton>
                     </Link>
                 </section>
             </section>

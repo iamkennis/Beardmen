@@ -1,12 +1,11 @@
 .side--navbar{
     position: absolute;
-    background-color: #005661;
+    background-color: #00333a;
     width: 25rem;
     height: 65rem;
     top: 0;
     z-index: 1;
 }
-
 
 .side-nav--icon-bar {
   position: absolute;
@@ -61,7 +60,7 @@
 
 @media(max-width:576px) {
    .side--navbar{
-     width: 23rem;
+     width: 26rem;
    }
 
    .side-nav--link {
@@ -74,8 +73,9 @@
    }
 
   .side-nav--icon-times {
-  left: 15rem;
-  font-size: 20px;
+  left: 19rem;
+  margin-top: 4rem;
+  font-size: 24px;
   
   }
  
@@ -84,7 +84,7 @@
 
 @media(max-width:376px) {
    .side--navbar{
-     width: 19rem;
+     width: 20rem;
    }
 
     .side-nav--link {
@@ -94,14 +94,13 @@
 
    .side-nav--icon-times {
     left: 13rem;
-    font-size: 20px;
+    margin-top: 4rem;
+    font-size: 26px;
    }
 
    .shop--cart {
     margin-left: 8px;
    }
 
-.side-nav--icon-bar{
-    color: #0000;
 }
-}
+

@@ -6,11 +6,11 @@
   background-color: #005661;
 }
 
-.logo {
+/* .logo {
   font-size: 24px;
   color: #ffffff;
-  margin-right: 30rem;
-}
+  margin-right: 15rem;
+} */
 
 
 .nav--links {
@@ -56,21 +56,30 @@
 }
 
 @media(max-width:992px) {
-  .nav {
+  .nav--links {
     display: none;
   }
+  /* .icon-shop{
+     display: none;
+  } */
 }
 
 @media(max-width:768px) {
-   .nav {
+   .nav--links {
     display: none;
   }
+  /* .icon-shop{
+     display: none;
+  } */
 }
 
 
 @media(max-width:576px) {
- .nav {
+ .nav--links {
     display: none;
+  }
+  .logo{
+   display: none;
   }
 }
 

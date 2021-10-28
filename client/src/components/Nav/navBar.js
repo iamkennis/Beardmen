@@ -8,9 +8,10 @@ import CartIcon from '../CartIcon/cartIcon'
 function NavBar (){
     return (
         <>
+             {/* <h5 className='logo'>BeardMen</h5> */}
         <nav className='nav'>
            
-             <h5 className='logo'>BeardMen</h5>
+            
             <section className='nav--links'>
                 { NavData.map( ( item, index) =>
                 {
@@ -24,8 +25,11 @@ function NavBar (){
                       })}
 
                    
-            </section>
-                <CartIcon />   
+                </section>
+                <div className='icon-shop'>
+                 <CartIcon />   
+                </div>
+                
             </nav>
             {/* { hidden ? null : <CartBox/>
             } */}

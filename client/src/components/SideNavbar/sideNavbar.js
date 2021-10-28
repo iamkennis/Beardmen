@@ -4,7 +4,7 @@ import { IconContext } from 'react-icons'
 import {connect} from 'react-redux'
 import './sideNavbar.css'
 import NavData from '../NavData/navData'
-import CartIcon from '../CartIcon/cartIcon'
+// import CartIcon from '../CartIcon/cartIcon'
 import {toggleMenu} from '../../actions/cartAction'
 
 
@@ -30,10 +30,10 @@ function SideNav ({toggleMenu, hidden}){
                        
                         )
                     }) }
-                    <div className="shop--cart">
+                    {/* <div className="shop--cart">
                         <CartIcon />
                     </div>
-                     
+                      */}
                 </section>
                
             </nav>}
