@@ -20,21 +20,8 @@ app.use((req, res, next) => {
 
 
 app.use(express.json());
-app.use(express.static((__dirname, '../client/build')));
+app.use(express.static((__dirname, '../client/build', 'index.html')));
 
-
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
-});
-
-// app.get("*", (req, res) => {
-//     res.sendFile(path.resolve(__dirname, "../client/public","index.html" ))
-// })
-
-// app.use((req, res, next) => {
-//     console.log(req.headers)
-//    next() 
-// })
 
 app.use(bodyParser.json());
 app.use(cookieParser()) 

@@ -9,7 +9,7 @@
     "server": "nodemon server",
     "client": "npm start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "prod": "NODE_ENV=production nodemon server.js"
+    "prod": "NODE_ENV=production node server.js"
   },
   "repository": {
     "type": "git",
