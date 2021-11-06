@@ -2,7 +2,7 @@ const fs = require('fs');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv')
 const app = require('./app');
-const Product = require('./models/ProductSchema');
+// const Product = require('./models/ProductSchema');
 
 
 
@@ -42,9 +42,9 @@ process.on('unhandledRejection', (err) => {
 
 // Import data
 
-const products = JSON.parse(
-  fs.readFileSync(`${__dirname}/data/product.json`, 'utf-8')
-)
+// const products = JSON.parse(
+//   fs.readFileSync(`${__dirname}/data/product.json`, 'utf-8')
+// )
 // console.log(products);
 
 
