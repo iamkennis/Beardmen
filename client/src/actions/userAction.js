@@ -15,7 +15,7 @@ export const signInUser = (email, password) => async (dispatch) => {
         });
     
         
-    // localStorage.setItem('userInfo', JSON.stringify(data))
+        localStorage.setItem('userDetails', JSON.stringify(data));
   } catch (error) {
         dispatch({
           type: userActionType.SIGN_IN_ERROR,
@@ -38,7 +38,7 @@ export const signUpUser = (name,lastName, email, password) => async (dispatch) =
             type: userActionType.SIGN_UP_SUCCESS,
             payload: data
         })
- 
+      localStorage.setItem('userDetails', JSON.stringify(data));
     } catch (error)
     {
          dispatch({
@@ -49,4 +49,11 @@ export const signUpUser = (name,lastName, email, password) => async (dispatch) =
           : error.message,
     })
     }
+}
+
+export const signOutUser = () => async(dispatch) => {
+  localStorage.removeItem('userDetails')
+  localStorage.removeItem('cartProducts')
+
+  dispatch({type: userActionType.SIGN_OUT_SUCCESS})
 }

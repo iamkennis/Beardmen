@@ -18,8 +18,8 @@ function SignUp (props) {
 
   const dispatch = useDispatch()
   
-  const userSignUp = useSelector((state) => state.users)
-  const { users } = userSignUp
+  const user = useSelector((state) => state.user)
+  const { userDetails,error } = user
  
 const handleSubmit= (e) => {
   e.preventDefault()
@@ -29,6 +29,7 @@ const handleSubmit= (e) => {
  
   return (
     <div className='signup--box'>
+      { error && <p className='error-message'>{error}</p>}
       <div className='signup--field'>
         <p className='signup--p'>Please sign in below to continue</p>
         <form className='signup--form' onSubmit={handleSubmit}>
@@ -83,7 +84,7 @@ const handleSubmit= (e) => {
           </section>
        
           <section className='signup--btn'>
-            {users ? <Redirect to='/shop' /> :
+            {userDetails ? <Redirect to='/shop' /> :
               <button type='submit'>Sign Up</button> }
           </section>
         </form>

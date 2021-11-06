@@ -1,13 +1,14 @@
 import './Checkout.css'
 import Cart from '../../layout/Cart/Cart'
-import { connect } from 'react-redux'
+import { connect ,useSelector} from 'react-redux'
 import {createStructuredSelector} from 'reselect'
 import { selectCartProducts,selectCartTotal } from '../../Utils/cartSelector';
-
+import {Redirect } from 'react-router-dom'
 
 
 function CheckOut ({cartProducts, total,product}) {
-
+const user = useSelector((state) => state.user)
+  const { userDetails} = user
     return (  
       <section className="checkout">
         <div className="checkout--text">
@@ -22,12 +23,14 @@ function CheckOut ({cartProducts, total,product}) {
               {cartProducts.length ? 
                 cartProducts.map((cartProduct, idx)=> (
                 <Cart key={ cartProduct._id } cartProduct={cartProduct} />
-              )) : <p>Your cart is empty</p>}
+              )) : <p className='checkout-p-text'>Your cart is empty</p>}
             </div>
             <div className="checkout--span">
                <span >Total:#{total}</span>
             </div>
-             <button className='checkout-btn'>CHECK OUT</button>
+            { userDetails ? <button className='checkout-btn'>CHECK OUT</button>:
+              <Redirect to='/login' /> 
+              }
           </div>
           
           <hr />

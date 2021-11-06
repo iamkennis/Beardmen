@@ -3,7 +3,7 @@ import ProductActionTypes from "../constants/productTypes";
 
 const INITIAL_STATE = {
     products: [],
-    message : ''
+    error : ''
 }
 
 
@@ -17,7 +17,7 @@ const productReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 products: action.payload,
-               message: action.payload
+               error: action.payload
             }
         case ProductActionTypes.ADD_PRODUCT:
             return {

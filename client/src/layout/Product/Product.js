@@ -11,15 +11,20 @@ function Product ({ product, addToCart }) {
     return (
         <>
             < div className='product--container' >
-                    <div className='product--items'>
-                        <img className='product--img' src={image } alt={name } />
-                        <p className='product--text'>{name }</p>
-                        <p className='product--text' >#{price }</p>
+                <div key={ product._id } className='product--items'>
+                    <a href={ `/product/${ product._id }` }>
+                        <img className='product--img' src={ image } alt={ name } />
+                    </a>
+                    <a href={ `/product/${ product._id }` }>
+                        <p className='product--text'>{ name }</p>
+                    </a>
+                      
+                    <p className='product--text' >#{ price }</p>
                 
-                        <div className='product--btn'>
-                            <button className="products-btn" onClick={()=> addToCart(product)}>Add</button>
-                        </div>
+                    <div className='product--btn'>
+                        <button className="products-btn" onClick={ () => addToCart(product) }>Add</button>
                     </div>
+                </div>
                 
             </div >
         </>

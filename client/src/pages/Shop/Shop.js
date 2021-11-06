@@ -2,7 +2,6 @@ import {useEffect,useState} from 'react'
 import { connect } from 'react-redux'
 // import {Link} from 'react-router-dom'
 
-
 import './Shop.css'
 import {getProducts} from '../../actions/productAction'
 import Product from '../../layout/Product/Product';

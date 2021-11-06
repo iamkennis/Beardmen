@@ -1,6 +1,6 @@
 import './signIn.css'
 import { Link} from 'react-router-dom'
-import {useState,useEffect} from 'react'
+import {useState} from 'react'
 import CustomButton from '../../components/CustomButton/customButton'
 import Footer from '../../layout/Footer/Footer'
 import {useDispatch, useSelector } from 'react-redux'
@@ -15,18 +15,14 @@ function SignIn (props) {
 
   const dispatch = useDispatch()
   
-  const userSignIn = useSelector((state) => state.users)
-  const { users,token, message } = userSignIn
+  const user = useSelector((state) => state.user)
+  const { userDetails,error } = user
   
-  useEffect(() => {
-    if (users)
-    {
-     return  <Redirect to='/shop'/>
-    } else
-    {
-      return message
-   }
-},[users,message])
+  // useEffect(() => {
+  //   if(userDetails) return <Redirect to='/shop'/>
+  // }, [ userDetails ]);
+  
+  
   
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -39,6 +35,7 @@ function SignIn (props) {
   return (
     <>
       <section className='signin--box'>
+        { error && <p className='error-message'>{error}</p>}
         <h1 className='sign--h1'>Welcome back!</h1>
         <p className='sign--p'>Please sign in below to continue</p>
         <form onSubmit={ handleSubmit }>
@@ -69,7 +66,8 @@ function SignIn (props) {
             />
           </section>
           <section className='form--btn'>
-            <CustomButton type='submit' name='button'>sign in</CustomButton>
+            {userDetails ? <Redirect to='/shop' /> :
+              <CustomButton type='submit' name='button'>sign in</CustomButton> }
           </section>
         </form>
          <section className='forget--links'>

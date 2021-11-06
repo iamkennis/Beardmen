@@ -1,4 +1,5 @@
-import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+// import {Link} from 'react-router-dom'
 import './App.css';
 import CheckOut from './layout/Checkout/Checkout';
 import NavBar from './components/Nav/navBar';
@@ -19,8 +20,8 @@ function App () {
         <SideNav />
         <Switch>
           <Route exact path='/' component={ Home } />
-          <Route path='/login' component={ SignIn } />
           <Route path='/signup' component={ SignUp } />
+          <Route path='/login' component={SignIn}/>
           <Route path='/shop' component={ Shop } />
           <Route path='/product/:id' component={ Product } />
           <Route path='/checkout' component={ CheckOut } />

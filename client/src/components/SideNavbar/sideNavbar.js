@@ -4,11 +4,21 @@ import { IconContext } from 'react-icons'
 import {connect} from 'react-redux'
 import './sideNavbar.css'
 import NavData from '../NavData/navData'
+import {useDispatch, useSelector } from 'react-redux'
 // import CartIcon from '../CartIcon/cartIcon'
+import { signOutUser } from '../../actions/userAction'
 import {toggleMenu} from '../../actions/cartAction'
 
 
-function SideNav ({toggleMenu, hidden}){
+function SideNav ({ toggleMenu, hidden }) {
+    const dispatch = useDispatch()
+
+    function signoutHandler () {
+        dispatch(signOutUser())
+    }
+    
+     const user = useSelector((state) => state.user)
+  const { userDetails} = user
     return (
         <>
             
@@ -30,10 +40,13 @@ function SideNav ({toggleMenu, hidden}){
                        
                         )
                     }) }
-                    {/* <div className="shop--cart">
-                        <CartIcon />
-                    </div>
-                      */}
+                    { userDetails ? (<NavLink to='#signout' onClick={signoutHandler} className='side-nav--link'>Sign Out</NavLink>) :
+                        (<NavLink to='/signup' className='side-nav--link'>Sign Up</NavLink>) }
+                    
+                    { userDetails ? (<NavLink to='#' className='side-nav--link'>{userDetails.name}</NavLink>) :
+                             (<NavLink to='/login' className='side-nav--link'>Sign In</NavLink>)
+                    }
+                    
                 </section>
                
             </nav>}

@@ -32,13 +32,16 @@
   border-radius: 3px;
   cursor: pointer;
   text-transform: capitalize;
-  position: relative;
-  top:0;
+  position: absolute;
+  top: 12rem;
   left: 66rem;
-  bottom: 50px;
+  bottom: 0;
 }
 
 .checkout-btn:hover{
     background-color:#2d8d00;
 }
 
+.checkout-p-text{
+    text-align: center;
+}
