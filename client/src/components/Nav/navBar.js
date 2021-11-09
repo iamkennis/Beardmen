@@ -51,8 +51,6 @@ function NavBar () {
                 </div>
                 
             </nav>
-            {/* { hidden ? null : <CartBox/>
-            } */}
             </>
     );
 }

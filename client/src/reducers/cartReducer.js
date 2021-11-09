@@ -3,9 +3,7 @@ import {addProductToCart,removeCartProduct} from '../Utils/cartUtils'
 
 const INITIAL_STATE = {
     cartProducts: [],
-    hidden: true,
-    message: ''
-    
+    hidden: true, 
 }
 
 const cartReducer = (state = INITIAL_STATE, action) => {
@@ -21,15 +19,17 @@ const cartReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 cartProducts: addProductToCart(state.cartProducts, action.payload),
-                message: action.payload
             };
         
         case CartActionTypes.REMOVE_CART:
-        // case CartActionTypes.FETCH_CART_ERROR:
             return {
                 ...state,
                 cartProducts: removeCartProduct(state.cartProducts, action.payload),
-                // message: action.payload
+            }
+        case CartActionTypes.CLEAR_CART:
+            return {
+                ...state,
+                cartProducts: state.cartProducts.filter((cartProduct) => cartProduct._id !== action.payload._id)
             }
     default:
     return state;
