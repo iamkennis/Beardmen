@@ -10,8 +10,3 @@ const middleware = [thunk,logger]
 
 export const store = createStore(rootReducer,composeWithDevTools(applyMiddleware(...middleware)))
 export const persistor = persistStore(store);
-
-
-// const preStore = { store, persistor };
-
-// export default { store, persistor };

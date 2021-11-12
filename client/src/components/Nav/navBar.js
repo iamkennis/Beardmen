@@ -40,7 +40,7 @@ function NavBar () {
                     { userDetails ? (<NavLink to='#signout' onClick={signoutHandler} className='nav--link'>Sign Out</NavLink>) :
                         (<NavLink to='/signup' className='nav--link'>Sign Up</NavLink>) }
                     
-                    { userDetails ? (<NavLink to='#' className='nav--link'>{userDetails.name}</NavLink>) :
+                    { userDetails ? (<NavLink to='#' className='nav--link'>{userDetails.name.toUpperCase()}</NavLink>) :
                              (<NavLink to='/login' className='nav--link'>Sign In</NavLink>)
                     }
                     

@@ -19,11 +19,15 @@ function SignUp (props) {
   const dispatch = useDispatch()
   
   const user = useSelector((state) => state.user)
-  const { userDetails,error } = user
+  const { userDetails, error } = user
  
 const handleSubmit= (e) => {
   e.preventDefault()
-  dispatch(signUpUser(name,lastName, email, password))
+  dispatch(signUpUser(name, lastName, email, password))
+  setName('');
+  setLastName('')
+  setEmail('');
+  setPassword('')
 }
 
  
@@ -84,7 +88,7 @@ const handleSubmit= (e) => {
           </section>
        
           <section className='signup--btn'>
-            {userDetails ? <Redirect to='/shop' /> :
+            {userDetails ? <Redirect to='/' /> :
               <button type='submit'>Sign Up</button> }
           </section>
         </form>

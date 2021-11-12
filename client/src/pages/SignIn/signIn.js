@@ -27,8 +27,8 @@ function SignIn (props) {
   const handleSubmit = (e) => {
     e.preventDefault()
     dispatch(signInUser(email,password))
-    
-   console.log(email, password)
+    setEmail('');
+    setPassword('');
   };
  
 
@@ -55,7 +55,7 @@ function SignIn (props) {
         
           <section className='signup-container'>
             <div>
-              <label htmlFor="password" placeholder="*******" >Password</label>
+              <label htmlFor="password" placeholder="*******">Password</label>
             </div>
             <input
               type="password"
