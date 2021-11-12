@@ -40,7 +40,7 @@ process.on('unhandledRejection', (err) => {
   });
 });
 
-// Import data
+//Import data
 
 // const products = JSON.parse(
 //   fs.readFileSync(`${__dirname}/data/product.json`, 'utf-8')
