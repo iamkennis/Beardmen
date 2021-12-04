@@ -38,7 +38,7 @@ header {
 }
 
 
-@media(max-width:1200px) {
+@media(max-width:67.5rem) {
   header {
     height: 30rem;
   }
@@ -58,7 +58,7 @@ header {
 }
 }
 
-@media(max-width:992px) {
+@media(max-width:67.5rem) {
   .header--img {
    height: 20rem; 
   bottom: 14rem;
@@ -86,7 +86,7 @@ header {
 
 }
 
-@media(max-width:868px) {
+@media(max-width: 48rem) {
      .header--img {
    height: 18rem; 
   bottom: 13rem;
@@ -108,7 +108,7 @@ header {
 
 }
 
-@media(max-width:768px) {
+@media(max-width: 48rem) {
      .header--img {
    height: 16rem; 
   bottom: 14rem;
@@ -131,7 +131,7 @@ header {
 }
 
 
-@media(max-width:576px) {
+@media(max-width: 48rem) {
   header {
   height: 40rem;
 }
@@ -161,7 +161,7 @@ header {
 }
 }
 
-@media(max-width:376px) {
+@media(max-width: 36rem) {
   header{
     height: 32rem;
     text-align: center;

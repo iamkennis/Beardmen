@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
+import session from 'redux-persist/lib/storage/session';
+// import storage from 'redux-persist/lib/storage/session';
 
 import cartReducer from '../reducers/cartReducer';
 import productReducer from '../reducers/productReducer'
@@ -8,8 +9,8 @@ import userReducer from '../reducers/userReducer';
 
 const persistConfig = {
     key: 'root',
-    storage,                                                                                 
-    whitelist: ['user','cart']
+    storage: session,                                                                                 
+    whitelist: [ 'cart','user']
 }
 
 

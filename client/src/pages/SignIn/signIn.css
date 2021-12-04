@@ -96,7 +96,7 @@
 }
 
 
-@media(max-width:578px) {
+@media(max-width:48rem) {
   .sign--h1 {
   font-size: 1.4rem;
   text-align: center;
@@ -123,7 +123,7 @@
 }
 }
 
-@media(max-width:396px) {
+@media(max-width:36rem) {
   .signin--box {
   
   padding: 4rem 1rem;

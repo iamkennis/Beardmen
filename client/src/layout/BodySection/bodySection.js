@@ -6,7 +6,7 @@ import SectionLeft from '../../components/SectionLeft/sectionLeft'
 import CustomButton from '../../components/CustomButton/customButton'
 
 
-function BodySection (props) {
+function BodySection () {
     return (
         <main>
             <section className='section--h1'>
