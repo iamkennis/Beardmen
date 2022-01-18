@@ -32,12 +32,12 @@ const handleSubmit= (e) => {
 
  
   return (
-    <div className='signup--box'>
-      { error && <p className='error-message'>{error}</p>}
-      <div className='signup--field'>
-        <p className='signup--p'>Please sign in below to continue</p>
-        <form className='signup--form' onSubmit={handleSubmit}>
-          <section className='signup-container'>
+    <div className='signup__box'>
+      { error && <p className='error__message'>{error}</p>}
+      <div className='signup__field'>
+        <p className='signup__p'>Please sign in below to continue</p>
+        <form className='signup__form' onSubmit={handleSubmit}>
+          <section className='signup__container'>
             <div>
               <label htmlFor="name">Name</label>
             </div>
@@ -61,7 +61,7 @@ const handleSubmit= (e) => {
             onChange={(e) => setLastName(e.target.value)}
             />
           </section>
-          <section className='signup-container'>
+          <section className='signup__container'>
             <div>
               <label htmlFor="email">Email</label>
             </div>
@@ -74,7 +74,7 @@ const handleSubmit= (e) => {
               // ref={emailRef}
             />
           </section>
-          <section className='signup-container'>
+          <section className='signup__container'>
             <div>
               <label htmlFor="password" >Password</label>
             </div>
@@ -87,7 +87,7 @@ const handleSubmit= (e) => {
             />
           </section>
        
-          <section className='signup--btn'>
+          <section className='signup__btn'>
             {userDetails ? <Redirect to='/' /> :
               <button type='submit'>Sign Up</button> }
           </section>
@@ -98,4 +98,4 @@ const handleSubmit= (e) => {
   );
 }
 
-export default SignUp
+export default SignUp;

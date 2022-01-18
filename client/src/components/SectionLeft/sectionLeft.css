@@ -1,96 +1,96 @@
 
-.section--left {
+.section__left {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: 130px;
 }
 
-.section--ul-left{
+.section__ul-left{
   font-size: 1.2rem;
  color: #005043;
   padding: 25px;
 }
 
 
-.section--h1-left {
+.section__h1-left {
   font-size: 50px;
   padding-top: 80px;
    padding-left: 18px;
   color: #005043;
 }
 
-.section--left-text {
+.section__left-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
 }
 
-.section-img-left{
+.section__img-left{
   height: 450px;
 }
 
 
 
 @media(max-width:67.5rem) {
-.section--h1-left {
+.section__h1-left {
   font-size: 35px;
   min-width: 300px;
   
 }
 
- .section-img-left{
+ .section__img-left{
   height: 300px;
 }
 
-.section--left{
+.section__left{
  margin-bottom: 180px;
 }
 
-.section--ul-left{
+.section__ul-left{
   font-size: 1rem;
 }
 }
 
 @media(max-width:48rem) {
-  .section--left{
+  .section__left{
      margin: 50px;
   }
-  .section--left {
+  .section__left {
     display: flex;
   flex-direction: column;
   align-items: center;
   }
   
-  .section-img-left{
+  .section__img-left{
      position: relative;
      top: 300px;
   }
 
-  .section--left-text {
+  .section__left-text {
     position: relative;
      bottom: 350px;
   }
 }
 
 @media(max-width: 36rem) {
-  .section--left{
+  .section__left{
      margin: -30px;
   }
-  .section--h1-left {
+  .section__h1-left {
   font-size: 30px;
   min-width: 300px;
   padding-left: 35px;
   
   }
 
-  .section-img-left{
+  .section__img-left{
   height: 250px;
   margin-bottom: 80px;
  }
 
- .section--ul-left{
+ .section__ul-left{
   font-size: 0.9rem;
   padding-left: 30px;
  }

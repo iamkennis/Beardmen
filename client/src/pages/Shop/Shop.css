@@ -10,7 +10,7 @@
     font-weight: 600;
 }
    
-.shop--list{
+.shop__list{
     display: grid;
     padding: 150px;
     row-gap: 3rem;
@@ -20,7 +20,7 @@
 }
 
 @media(max-width:67.5rem) {
-    .shop--list{
+    .shop__list{
     display: grid;
     row-gap: 2rem;
      grid-template-columns: repeat(3, 2fr);
@@ -36,7 +36,7 @@
       
    }
 
-    .shop--list{
+    .shop__list{
      row-gap: 2rem;
      grid-template-columns: repeat(3, 2fr);
     }
@@ -49,7 +49,7 @@
     margin-bottom: 6rem;
    }
 
-   .shop--list{
+   .shop__list{
      row-gap: 2rem;
      grid-template-columns: repeat(3, 2fr);
      bottom: 120px;

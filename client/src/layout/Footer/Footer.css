@@ -16,17 +16,17 @@ li {
 }
 
 
-.footer--icon {
+.footer__icon {
      margin-top: 7rem;
 }
 
-.icon--color {
+.icon__color {
     color: #ffffff;
     cursor: pointer;
     margin: 1.1rem;
     font-size: 1.2rem;
 }
 
-.icon--color:hover{
+.icon__color:hover{
     color:#00a7bd;
 }

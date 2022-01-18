@@ -14,11 +14,11 @@ function Footer()
     return (
         <footer >
             <div className='footer'>
-            <div className='footer--icon'>
-                        <FaYoutube className='icon--color'/>
-                        <FaFacebook className='icon--color'/>
-                        <FaTwitter className='icon--color'/>
-                        <FaInstagram className='icon--color'/>  
+            <div className='footer__icon'>
+                        <FaYoutube className='icon__color'/>
+                        <FaFacebook className='icon__color'/>
+                        <FaTwitter className='icon__color'/>
+                        <FaInstagram className='icon__color'/>  
                 </div>
             </div>
 

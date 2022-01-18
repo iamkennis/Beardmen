@@ -11,24 +11,24 @@ const user = useSelector((state) => state.user)
   const { userDetails} = user
     return (  
       <section className="checkout">
-        <div className="checkout--text">
-          <h1 className="checkout--h1">Your cart</h1>
-          <p className="checkout--p">item ships at checkout</p>
+        <div className="checkout__text">
+          <h1 className="checkout__h1">Your cart</h1>
+          <p className="checkout__p">item ships at checkout</p>
            
         </div>
         <div>
           <hr />
-                <div className='checkout--modal'>
+                <div className='checkout__modal'>
             <div>
               {cartProducts.length ? 
                 cartProducts.map((cartProduct, idx)=> (
                 <Cart key={ cartProduct._id } cartProduct={cartProduct} />
-              )) : <p className='checkout-p-text'>Your cart is empty</p>}
+              )) : <p className='checkout__p-text'>Your cart is empty</p>}
             </div>
-            <div className="checkout--span">
+            <div className="checkout__span">
                <span >Total:#{total}</span>
             </div>
-            { userDetails ? <button className='checkout-btn'>CHECK OUT</button>:
+            { userDetails ? <button className='checkout__btn'>CHECK OUT</button>:
               <Redirect to='/login' /> 
               }
           </div>

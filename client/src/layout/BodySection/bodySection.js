@@ -9,16 +9,16 @@ import CustomButton from '../../components/CustomButton/customButton'
 function BodySection () {
     return (
         <main>
-            <section className='section--h1'>
+            <section className='section__h1'>
                 <h1 >Another way to enjoy the best beard Products</h1>
             </section>
-            <section className='section--main'>
-                <section className='section--container'>
-                    <h1 className='section--btn-h1'>
+            <section className='section__main'>
+                <section className='section__container'>
+                    <h1 className='section__btn-h1'>
                         Need a smooooth <br /> shave?
                 </h1>
-                    <p className='section--btn-p'>Try our most popular starter set,<br/> and exprience the best in your product</p>
-                    <section className='section--btn'>
+                    <p className='section__btn-p'>Try our most popular starter set,<br/> and exprience the best in your product</p>
+                    <section className='section__btn'>
                         <Link to='/shop'>
                             <CustomButton>Try for $10</CustomButton>
                         </Link>
@@ -26,13 +26,13 @@ function BodySection () {
                 </section>
                 
                 <section>
-                    <img className='section--img' src={ bodysect } alt='' />
+                    <img className='section__img' src={ bodysect } alt='' />
                 </section>
             </section>
-            <div className='section--h1' >
+            <div className='section__h1' >
                 <h1 >Why join the Club</h1>
               </div>
-            <div className="section--side">
+            <div className="section__side">
                 <SectionRight/>
             <SectionLeft/>
             </div>

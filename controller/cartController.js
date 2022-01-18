@@ -22,8 +22,6 @@ exports.addCartProduct = catchAsync(async (req, res, next) => {
     // if (!req.body.user) req.body.user = req.user.id;
     const newCart = await Cart.create(req.body)
     
-    
-
     res.status(200).json({
     createdAt: req.createdAt,
     status: 'success',

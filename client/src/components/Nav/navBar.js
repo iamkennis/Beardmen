@@ -24,29 +24,29 @@ function NavBar () {
         <nav className='nav'>
            
             
-                <section className='nav--links'>
+                <section className='nav__links'>
                     
                 { NavData.map( ( item, index) =>
                 {
                     return (
                        
-                            <NavLink key={index} to={ item.path } className='nav--link'>
+                            <NavLink key={index} to={ item.path } className='nav__link'>
                                 <span>{ item.title }</span>
                             </NavLink>
                                   
                     )
                 }) }
                     
-                    { userDetails ? (<NavLink to='#signout' onClick={signoutHandler} className='nav--link'>Sign Out</NavLink>) :
-                        (<NavLink to='/signup' className='nav--link'>Sign Up</NavLink>) }
+                    { userDetails ? (<NavLink to='#signout' onClick={signoutHandler} className='nav__link'>Sign Out</NavLink>) :
+                        (<NavLink to='/signup' className='nav__link'>Sign Up</NavLink>) }
                     
-                    { userDetails ? (<NavLink to='#' className='nav--link'>{userDetails.name.toUpperCase()}</NavLink>) :
-                             (<NavLink to='/login' className='nav--link'>Sign In</NavLink>)
+                    { userDetails ? (<NavLink to='#' className='nav__link'>{userDetails.name.toUpperCase()}</NavLink>) :
+                             (<NavLink to='/login' className='nav__link'>Sign In</NavLink>)
                     }
                     
                      
                 </section>
-                <div className='icon-shop'>
+                <div className='icon__shop'>
                  <CartIcon />   
                 </div>
                 

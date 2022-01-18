@@ -34,6 +34,7 @@ const ErrorInDev = (err, res) => {
 
 const ErrorInProd = (err, res) => {
     if (err.isOperational)
+    
     {
         res.status(err.statusCode).json({
             status: err.status,

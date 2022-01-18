@@ -8,15 +8,15 @@
 } */
 
 
-.icon--cart {
+.icon__cart {
   font-size: 25px;
   color: white;
   cursor: pointer;
   margin-top: 10px;
 }
 
-.icon--number {
-    background-color: #db03c9;
+.icon__number {
+    background-color: #007552;
     color:white;
     font-size: 14px;
     font-weight: 600;
@@ -28,7 +28,7 @@
 }
 
 @media(max-width:992px) {
-  .icon--number {
+  .icon__number {
     font-size: 14px;
     font-weight: 600;
     padding: 3px;
@@ -39,7 +39,7 @@
 }
 }
 @media(max-width:768px) {
-  .icon--number {
+  .icon__number {
     font-size: 14px;
     font-weight: 600;
     padding: 3px;
@@ -51,7 +51,7 @@
 }
 
 @media(max-width:576px) {
-.icon--number {
+.icon__number {
     font-size: 14px;
     font-weight: 600;
     padding: 3px;

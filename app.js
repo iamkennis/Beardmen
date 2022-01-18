@@ -16,15 +16,12 @@ app.use((req, res, next) => {
       next();
  });
 
- 
-
-
 app.use(express.json());
 app.use(express.static((__dirname, '../client/build', 'index.html')));
 
-
 app.use(bodyParser.json());
 app.use(cookieParser()) 
+
 // ROUTE
 app.use('/api/products', prouductRouter);
 app.use('/api/users', userRouter);

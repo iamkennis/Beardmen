@@ -12,9 +12,9 @@ function CartIcon ({productCount}) {
         <div>
             
             <Link to='./checkout'>
-                <FaShoppingCart className="icon--cart" />
+                <FaShoppingCart className="icon__cart" />
             </Link>
-            <span className='icon--number'>{productCount}</span>
+            <span className='icon__number'>{productCount}</span>
         </div>
     )
 }

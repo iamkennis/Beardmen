@@ -3,8 +3,8 @@ import './Spinner.css'
 
 export default function Spinner() {
   return (
-    <div className="spinner-container">
-      <div className="spinner-dual-ring"></div>
+    <div className="spinner__container">
+      <div className="spinner__dual-ring"></div>
     </div>
     
   );

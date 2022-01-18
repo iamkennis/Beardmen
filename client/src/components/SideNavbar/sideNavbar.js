@@ -22,29 +22,29 @@ function SideNav ({ toggleMenu, hidden }) {
     return (
         <>
             
-            <FaGripLines className="side-nav--icon-bar" onClick={toggleMenu} />
+            <FaGripLines className="sidenav__icon-bar" onClick={toggleMenu} />
            
            
-            { hidden ? null : <nav className='side--navbar'>
+            { hidden ? null : <nav className='sidenav__bar'>
         
-                <IconContext.Provider value={ { className: "side-nav--icon-times" } }>
+                <IconContext.Provider value={ { className: "sidenav__icon-times" } }>
                     <FaTimes onClick={ toggleMenu } />
                 </IconContext.Provider>
-                <section className='side-nav--links' onClick={ toggleMenu } >
+                <section className='sidenav__links' onClick={ toggleMenu } >
                     { NavData.map((item, index) => {
                         return (
                     
-                            <NavLink key={ index } to={ item.path } className='side-nav--link'>
+                            <NavLink key={ index } to={ item.path } className='sidenav__link'>
                                 <span>{ item.title }</span>
                             </NavLink>
                        
                         )
                     }) }
-                    { userDetails ? (<NavLink to='#signout' onClick={signoutHandler} className='side-nav--link'>Sign Out</NavLink>) :
-                        (<NavLink to='/signup' className='side-nav--link'>Sign Up</NavLink>) }
+                    { userDetails ? (<NavLink to='#signout' onClick={signoutHandler} className='sidenav__link'>Sign Out</NavLink>) :
+                        (<NavLink to='/signup' className='sidenav__link'>Sign Up</NavLink>) }
                     
-                    { userDetails ? (<NavLink to='#' className='side-nav--link'>{userDetails.name}</NavLink>) :
-                             (<NavLink to='/login' className='side-nav--link'>Sign In</NavLink>)
+                    { userDetails ? (<NavLink to='#' className='sidenav__link'>{userDetails.name}</NavLink>) :
+                             (<NavLink to='/login' className='sidenav__link'>Sign In</NavLink>)
                     }
                     
                 </section>

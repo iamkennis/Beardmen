@@ -1,15 +1,16 @@
 [
    {
    "name": "Beard Wash",
-  "price": 5000,
-    "image": "https://i.ibb.co/5RjjTRw/51p-Zheil-Qz-L.jpg"
+   "price": 5000,
+   "image": "https://i.ibb.co/5RjjTRw/51p-Zheil-Qz-L.jpg"
 },
-{   "name": "Comb and Blade Cut",
+{   
+   "name": "Comb and Blade Cut",
    "price": 2000,
-   "image":"https://i.ibb.co/K6BJ15W/71xi-Pdb-X-KL-SL1500.jpg"
-   
+   "image":"https://i.ibb.co/K6BJ15W/71xi-Pdb-X-KL-SL1500.jpg" 
 },
-{   "name": "Beard Wash Lotion",
+{  
+ "name": "Beard Wash Lotion",
    "price": 2500,
    "image": "https://i.ibb.co/sQmwgjH/61-rnyx-Mnf-S-SL1500.jpg"
 },
@@ -56,6 +57,3 @@
 }
 
  ]
-
-
-

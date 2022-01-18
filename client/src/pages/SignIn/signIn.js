@@ -8,7 +8,6 @@ import {signInUser} from '../../actions/userAction'
 import {Redirect } from 'react-router-dom'
 
 
-
 function SignIn (props) {
   const [ email, setEmail ] = useState('');
   const [ password, setPassword ] = useState('');
@@ -17,12 +16,6 @@ function SignIn (props) {
   
   const user = useSelector((state) => state.user)
   const { userDetails,error } = user
-  
-  // useEffect(() => {
-  //   if(userDetails) return <Redirect to='/shop'/>
-  // }, [ userDetails ]);
-  
-  
   
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -34,12 +27,12 @@ function SignIn (props) {
 
   return (
     <>
-      <section className='signin--box'>
-        { error && <p className='error-message'>{error}</p>}
-        <h1 className='sign--h1'>Welcome back!</h1>
-        <p className='sign--p'>Please sign in below to continue</p>
+      <section className='signin__box'>
+        { error && <p className='error__message'>{error}</p>}
+        <h1 className='sign__h1'>Welcome back!</h1>
+        <p className='sign__p'>Please sign in below to continue</p>
         <form onSubmit={ handleSubmit }>
-          <section className='signup-container'>
+          <section className='signup__container'>
             <div>
               <label htmlFor="email" placeholder="example@mail.com">Email</label>
             </div>
@@ -65,17 +58,17 @@ function SignIn (props) {
             onChange={(e) => setPassword(e.target.value)}
             />
           </section>
-          <section className='form--btn'>
+          <section className='form__btn'>
             {userDetails ? <Redirect to='/shop' /> :
               <CustomButton type='submit' name='button'>sign in</CustomButton> }
           </section>
         </form>
-         <section className='forget--links'>
+         <section className='forget__links'>
           {/* <Link className='forget--link' to='/forget-password'>Forget Password?</Link> */}
           {/* <Link className='forget--link' to='/forget-email'>Forget Email?</Link> */}
         </section> 
-        <section className='signup--link'>
-          <Link className='forget--link' to='/signup'>Not a member?Join us!</Link>
+        <section className='signup__link'>
+          <Link className='forget__link' to='/signup'>Not a member?Join us!</Link>
         </section>
       </section>
       <Footer />

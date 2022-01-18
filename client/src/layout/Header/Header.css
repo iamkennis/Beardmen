@@ -8,13 +8,13 @@ header {
   padding-left: 6rem;
 }
 
-.header--h1 {
+.header__h1 {
   color: white;
   min-width: 4rem;
   font-size: 4rem;
 }
 
-.header--p {
+.header__p {
   color: white;
   font-size: 16px;
   max-width: 260px;
@@ -22,19 +22,17 @@ header {
   line-height: 1.5;
 }
 
-.header--btn {
+.header__btn {
   
   margin-top: 1.3rem;
 }
 
 
-.header--img {
+.header__img {
   height: 29rem;
   position: absolute;
   left: 28rem;
   top: 8rem;
-  
-  
 }
 
 
@@ -42,13 +40,13 @@ header {
   header {
     height: 30rem;
   }
-.header--img {
+.header__img {
   height: 25rem; 
   bottom: 7rem;
   left: 22rem;
 }
 
-.header--h1 {
+.header__h1 {
   font-size: 4rem;
 }
 
@@ -59,7 +57,7 @@ header {
 }
 
 @media(max-width:67.5rem) {
-  .header--img {
+  .header__img {
    height: 20rem; 
   bottom: 14rem;
   left: 23rem;
@@ -69,15 +67,15 @@ header {
   padding-top: 5rem;
   padding-left: 5rem;
 }
-.header--h1 {
+.header__h1 {
   font-size: 3.2rem;
 }
 
-.header--p {
+.header__p {
   font-size: 14px;
 }
 
-.header--btn {
+.header__btn {
   padding: 0.7rem;
   color: #ffffff;
   font-size: 1.1rem;
@@ -87,12 +85,12 @@ header {
 }
 
 @media(max-width: 48rem) {
-     .header--img {
+     .header__img {
    height: 18rem; 
   bottom: 13rem;
   left: 19rem;
 }
-.header--h1 {
+.header__h1 {
   font-size: 3rem;
 }
 
@@ -101,7 +99,7 @@ header {
   padding-left: 2rem;
 }
 
-.header--p {
+.header__p {
   font-size: 14px;
    min-width: 160px;
 }
@@ -109,12 +107,12 @@ header {
 }
 
 @media(max-width: 48rem) {
-     .header--img {
+     .header__img {
    height: 16rem; 
   bottom: 14rem;
   left: 15rem;
 }
-.header--h1 {
+.header__h1 {
   font-size: 2.4rem;
 }
 
@@ -123,7 +121,7 @@ header {
   padding-left: 2rem;
 }
 
-.header--p {
+.header__p {
   font-size: 14px;
    min-width: 120px;
 }
@@ -135,7 +133,7 @@ header {
   header {
   height: 40rem;
 }
-   .header--img {
+   .header__img {
    display: none;
 }
 
@@ -144,16 +142,16 @@ header {
   padding-left: 5rem;
 }
 
-.header--h1 {
+.header__h1 {
   font-size: 3.5rem;
 }
 
-.header--p {
+.header__p {
   font-size: 18px;
   min-width: 140px;
 }
 
-.header--btn {
+.header__btn {
   padding: 0.8rem;
   color: #ffffff;
   font-size: 1.3rem;
@@ -166,13 +164,13 @@ header {
     height: 32rem;
     text-align: center;
   }
-.header--h1 {
+.header__h1 {
   font-size: 2.5rem;
   text-align: center;
   min-width: 11rem;
 }
 
-.header--p {
+.header__p {
   font-size: 14px;
   min-width: 180px;
   text-align: center;
@@ -182,7 +180,7 @@ header {
   padding-right: 5rem;
 }
 
-.header--btn {
+.header__btn {
   padding: 0.7rem;
   color: #ffffff;
   font-size: 1.6rem;

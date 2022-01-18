@@ -9,7 +9,6 @@ import Footer from '../../layout/Footer/Footer';
 import Spinner from '../../components/Spinner/Spinner';
 
 
-
 function Shop ({ getProduct, productData }) {
     const [isLoading, setIsLoading] = useState(true)
 
@@ -27,9 +26,9 @@ function Shop ({ getProduct, productData }) {
                 <p>Shop</p>
             </section>
              {isLoading && <Spinner/>}
-            <div className='shop--list'>
+            <div className='shop__list'>
                 { productData.products.map(product =>
-                    <Product className='shop--list' key={ product._id } product={ product } />
+                    <Product className='shop__list' key={ product._id } product={ product } />
                 ) }
 
             </div>

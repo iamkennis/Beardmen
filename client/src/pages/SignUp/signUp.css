@@ -1,14 +1,14 @@
 /* .signup--box{
 
 } */
-.signup--field {
+.signup__field {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 4rem;
 }
-.signup--p {
+.signup__p {
   padding-top: 0rem; 
 }
 
@@ -18,7 +18,7 @@ input {
   border: 1px solid black;
 }
 
-.signup-container{
+.signup__container{
  padding: 5px;
 }
 
@@ -30,7 +30,7 @@ label {
   color: #0e0e41;
 }
 
-.signup--btn {
+.signup__btn {
   display: flex;
   flex-direction: column;
   align-self: center;

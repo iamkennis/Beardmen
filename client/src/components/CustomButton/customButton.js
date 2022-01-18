@@ -3,7 +3,7 @@ import './customButton.css'
 
 function CustomButton (props) {
     return (
-        <button className='custom--button'>{props.children}</button>
+        <button className='custom__button'>{props.children}</button>
     )
 }
 
