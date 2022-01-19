@@ -9,12 +9,11 @@
   "main": "app.js",
   "scripts": {
     "start": "node server.js",
-    "server": "nodemon server.js",
+    "server": "node server.js",
     "client": "cd client && npm start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "cd client && npm run build",
     "prod": "NODE_ENV=production node server.js",
-    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+    "heroku-postbuild": "cd client && npm install && npm install && npm run build"
   },
   "repository": {
     "type": "git",

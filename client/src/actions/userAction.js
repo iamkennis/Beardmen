@@ -1,12 +1,12 @@
 import userActionType from "../constants/userType";
-import axios from 'axios'
+import { axiosInstance } from '../config';
 
 export const signInUser = (email, password) => async (dispatch) => {
       try {
-        const { data } = await axios.post(
-          '/api/users/login',
-          {email, password }
-        );
+        const { data } = await axiosInstance.post('/api/users/login', {
+					email,
+					password,
+				});
         
 
         dispatch({
@@ -32,7 +32,12 @@ export const signInUser = (email, password) => async (dispatch) => {
 export const signUpUser = (name,lastName, email, password) => async (dispatch) => {
     try
     {
-      const { data } = await axios.post('/api/users/signup', { name, lastName, email, password })
+      const { data } = await axiosInstance.post('/api/users/signup', {
+				name,
+				lastName,
+				email,
+				password,
+			});
       
         dispatch({
             type: userActionType.SIGN_UP_SUCCESS,
