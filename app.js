@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+const path = require('path');
 
 const AppError = require('./utils/appError');
 const globalError = require('./controller/errorController')
@@ -18,11 +19,12 @@ app.use((req, res, next) => {
 
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, '/client/build')));
-
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '/client/build', 'index.html'))
-});
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(__dirname, '/client/build')));
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, '/client/build', 'index.html'))
+    });
+}
 
 app.use(bodyParser.json());
 app.use(cookieParser()) 

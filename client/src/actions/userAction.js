@@ -1,5 +1,6 @@
 import userActionType from "../constants/userType";
-import { axiosInstance } from '../config';
+// import axiosInstance from 'axiosInstance';
+import {axiosInstance} from '../config'
 
 export const signInUser = (email, password) => async (dispatch) => {
       try {

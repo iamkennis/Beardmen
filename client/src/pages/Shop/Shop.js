@@ -27,9 +27,9 @@ function Shop ({ getProduct, productData }) {
             </section>
              {isLoading && <Spinner/>}
             <div className='shop__list'>
-                { productData.products.map(product =>
+                {productData.products.map(product =>
                     <Product className='shop__list' key={ product._id } product={ product } />
-                ) }
+                )}
 
             </div>
                   

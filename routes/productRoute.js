@@ -9,7 +9,7 @@ const router = express.Router();
 
 router.route('/')
     .get(
-        userAuth.protectProduct, 
+        // userAuth.protectProduct, 
         productController.getAllProduct)
     .post(productController.createProduct)
  

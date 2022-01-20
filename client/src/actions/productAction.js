@@ -1,4 +1,5 @@
 import { axiosInstance } from '../config';
+// import axiosInstance from 'axiosInstance'
 import ProductActionTypes from '../constants/productTypes';
 
 export const getProducts = () => async (dispatch) => {
@@ -40,7 +41,7 @@ export const addProducts = (product) => async (dispatch) => {
 					: error.message,
 		});
 	}
-	// axios.post('/', product)
+	// axiosInstance.post('/', product)
 	//     .then(res => dispatch({
 	//         type: ProductActionTypes.ADD_PRODUCT,
 	//         payload: product
