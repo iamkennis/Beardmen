@@ -8,7 +8,7 @@ import Product from '../../layout/Product/Product';
 import Footer from '../../layout/Footer/Footer';
 import Spinner from '../../components/Spinner/Spinner';
 
-function Shop({ getProduct, product }) {
+function Shop({ getProduct, productData }) {
 	const [isLoading, setIsLoading] = useState(true);
 
 	useEffect(() => {
@@ -24,7 +24,7 @@ function Shop({ getProduct, product }) {
 			</section>
 			{isLoading && <Spinner />}
             <div className='shop__list'>
-                {product ? product.products.map((product) => (
+                {productData ? productData.products.map((product) => (
                     <Product className='shop__list' key={product._id} product={product} />
                 )) : null}
             </div>
@@ -35,7 +35,7 @@ function Shop({ getProduct, product }) {
 }
 
 const mapStateToProps = (state) => ({
-	product: state.products,
+	productData: state.products,
 });
 
 const mapDispatchToProps = (dispatch) => ({
