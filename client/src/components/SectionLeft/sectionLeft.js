@@ -1,4 +1,4 @@
-import ImageLeft from '../../assets/Imageleft.jpg'
+import ImageLeft from '../../assets/imageleft.jpg'
 import './sectionLeft.css'
 
 function SectionLeft()

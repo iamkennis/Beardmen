@@ -14,13 +14,13 @@
 
 .section__img {
     min-width: 500px;
-  height: 400px;
+  height: 500px;
 }
 
 .section__h1 {
   padding-top: 6rem;
   font-size: 25px;
-  color: #005043;
+  color: #570041;
   text-align: center;
 }
 
@@ -32,7 +32,7 @@
 
 .section__btn-h1 {
   font-size: 45px;
-  color: #005043;
+  color: #570041;
   text-align: left;
 }
 

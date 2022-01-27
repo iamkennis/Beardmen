@@ -1,6 +1,6 @@
 .sidenav__bar{
     position: absolute;
-    background-color: #00333a;
+    background-color: #2f0024;
     width: 25rem;
     height: 65rem;
     top: 0;
@@ -93,7 +93,7 @@
    }
 
    .sidenav__icon-times {
-    left: 13rem;
+    left: 14rem;
     margin-top: 4rem;
     font-size: 26px;
    }

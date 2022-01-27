@@ -13,14 +13,15 @@
 
 .section__ul-right{
   font-size: 1.2rem;
-  color: #005043;
+  color: #570041;
+  font-weight: 400;
   padding: 25px;
 }
 
 .section__h1-right {
   padding-left: 30px;
   font-size: 50px;
-  color: #005043;
+  color: #570041;
 }
 .section__img-right{
   height: 450px;

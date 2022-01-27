@@ -2,7 +2,7 @@ button{
   min-width: 150px;
   width: auto;
   height:  55px;
-  background-color:#009166;
+  background-color:#2b0021;
   color: #ffffff;
   letter-spacing: 0.5px;
   font-size: 16px;
@@ -15,7 +15,7 @@ button{
 }
 
 button:hover {
-   background-color:#007552;
+   background-color:#7c005d;
 }
 
 /* @media(max-width:992px) {
@@ -28,9 +28,9 @@ button:hover {
 
 @media(max-width:376px) {
   button{
-     padding: 0 10px 0 10px;
+     padding: 0 35px 0 35px;
      min-width: 100px;
-     height:  45px;
-     font-size: 14px;
+     height:  54px;
+     font-size: 18px;
    }
 }

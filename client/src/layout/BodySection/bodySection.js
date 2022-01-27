@@ -1,5 +1,5 @@
 import './bodySection.css'
-import bodysect from '../../assets/bodysect.jpg'
+import bodysect from '../../assets/sectionImg.jpg'
 import { Link } from 'react-router-dom'
 import SectionRight from '../../components/SectionRight/sectionRight'
 import SectionLeft from '../../components/SectionLeft/sectionLeft'

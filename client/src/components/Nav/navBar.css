@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: flex-end;
   padding: 35px;
-  background-color: #005661;
+  background-color: #570041;
 }
 
 /* .logo {
@@ -26,7 +26,7 @@
 }
 
 .nav__link:hover {
-  color:#00a7bd ;
+  color:#ff00bf ;
 }
 
 

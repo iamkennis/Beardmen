@@ -1,21 +1,23 @@
 const express = require('express');
-const productController = require('../controller/productController')
-const userAuth = require('../auth/userAuth');
+const productController = require('../controller/productController');
+// const userAuth = require('../auth/userAuth');
 // const cartRouter = require('../routes/cartRoute');
 
 const router = express.Router();
 
 // router.use('/:productId/carts', cartRouter);
 
-router.route('/')
-    .get(
-        // userAuth.protectProduct, 
-        productController.getAllProduct)
-    .post(productController.createProduct)
- 
+router
+	.route('/')
+	.get(
+		// userAuth.protectProduct,
+		productController.getAllProduct
+	)
+	.post(productController.createProduct);
+
 router
 	.route('/:id')
-	.get(userAuth.protectProduct,productController.getProduct)
+	.get(productController.getProduct)
 	.patch(productController.updateProduct)
 	.delete(productController.deleteProduct);
 

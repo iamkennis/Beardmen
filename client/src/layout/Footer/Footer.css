@@ -1,5 +1,5 @@
 footer {
-    background-color:  #005661;
+    background-color:  #570041;
     min-height: 10rem;
 }
 
@@ -15,7 +15,6 @@ li {
     margin-right: 5rem;  
 }
 
-
 .footer__icon {
      margin-top: 7rem;
 }
@@ -28,5 +27,5 @@ li {
 }
 
 .icon__color:hover{
-    color:#00a7bd;
+    color:#ff00bf;
 }

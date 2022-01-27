@@ -19,23 +19,22 @@
 }
 
 .products__btn{
-  width: auto;
-  min-width: 40px;
-  height:  45px;
-  background-color:#009166;
+ padding: 0 35px 0 35px;
+     min-width: 100px;
+     height:  44px;
+  background-color:#570041;
   color: #ffffff;
   letter-spacing: 0.5px;
   font-size: 16px;
   font-weight: bolder;
   border: none;
-  border-radius: 5px;
-  padding: 0 35px 0 35px;
+  border-radius: 3px;
   cursor: pointer;
   text-transform: capitalize;
 }
 
 .products__btn:hover {
-   background-color:#007552;
+   background-color:#2f0024;
 }
 
 

@@ -1,4 +1,4 @@
-import ImageRight from '../../assets/Imageright.jpg'
+import ImageRight from '../../assets/imageright.jpg'
 import './sectionRight.css'
 
 

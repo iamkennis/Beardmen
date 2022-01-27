@@ -1,10 +1,9 @@
-import { axiosInstance } from '../config';
-// import axiosInstance from 'axiosInstance'
+import axios from 'axios';
 import ProductActionTypes from '../constants/productTypes';
 
 export const getProducts = () => async (dispatch) => {
 	try {
-		const { data } = await axiosInstance.get('/api/products');
+		const { data } = await axios.get('/api/products');
 		dispatch({
 			type: ProductActionTypes.GET_PRODUCT,
 			payload: data.data.products,
@@ -22,7 +21,7 @@ export const getProducts = () => async (dispatch) => {
 
 export const addProducts = (product) => async (dispatch) => {
 	try {
-		const { data } = await axiosInstance.get('/api/products', product);
+		const { data } = await axios.get('/api/products', product);
 		dispatch({
 			type: ProductActionTypes.ADD_PRODUCT,
 			payload: {
@@ -41,7 +40,7 @@ export const addProducts = (product) => async (dispatch) => {
 					: error.message,
 		});
 	}
-	// axiosInstance.post('/', product)
+	// axios.post('/', product)
 	//     .then(res => dispatch({
 	//         type: ProductActionTypes.ADD_PRODUCT,
 	//         payload: product
@@ -50,7 +49,7 @@ export const addProducts = (product) => async (dispatch) => {
 };
 
 export const updateProduct = (id, product) => (dispatch) => {
-	axiosInstance
+	axios
 		.patch(`/${id}`, product)
 		.then((res) =>
 			dispatch({
@@ -62,7 +61,7 @@ export const updateProduct = (id, product) => (dispatch) => {
 };
 
 export const deleteProduct = (id) => (dispatch) => {
-	axiosInstance
+	axios
 		.delete(`/${id}`)
 		.then((res) =>
 			dispatch({

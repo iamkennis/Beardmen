@@ -1,5 +1,5 @@
 header {
-  background-color:  #006e7c;
+  background-color:  #570041;
   height: 36rem;
 }
 
@@ -167,13 +167,14 @@ header {
 .header__h1 {
   font-size: 2.5rem;
   text-align: center;
-  min-width: 11rem;
+  min-width: 180px;
 }
 
 .header__p {
-  font-size: 14px;
-  min-width: 180px;
+  font-size: 15px;
+  min-width: 160px;
   text-align: center;
+  font-weight: 500;
 }
 .header {
   padding-top: 5rem;

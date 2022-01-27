@@ -24,7 +24,7 @@
   font-size: 1rem;
    width: auto;
   height:  45px;
-  background-color:#009166;
+  background-color:#570041;
   color: #ffffff;
   letter-spacing: 0.5px;
   font-weight: bolder;
@@ -39,9 +39,19 @@
 }
 
 .checkout__btn:hover{
-    background-color:#007552;
+    background-color:#b6006a;
 }
 
 .checkout__p-text{
     text-align: center;
+}
+
+@media(max-width: 36rem) {
+.checkout__btn{
+     text-align: center;
+     position: relative;
+  top: 1.6rem;
+  left: 13rem;
+}
+
 }

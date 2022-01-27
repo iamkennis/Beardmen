@@ -6,7 +6,7 @@ import Footer from '../../layout/Footer/Footer'
 import {useDispatch, useSelector } from 'react-redux'
 import {signInUser} from '../../actions/userAction'
 import {Redirect } from 'react-router-dom'
-
+import {toast} from 'react-toastify'
 
 function SignIn (props) {
   const [ email, setEmail ] = useState('');
@@ -23,7 +23,7 @@ function SignIn (props) {
     setEmail('');
     setPassword('');
   };
- 
+  
 
   return (
     <>

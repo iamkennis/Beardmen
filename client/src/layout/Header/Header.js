@@ -15,7 +15,7 @@ function Header(props) {
 					INVOLVE
 				</h1>
 				<p className='header__p'>
-					Tell us how you get invovle in grooming and we’ll recommend the
+					Tell us how you get invovle in grooming and well recommend the
 					perfect products
 				</p>
 				<section className='header__btn'>
