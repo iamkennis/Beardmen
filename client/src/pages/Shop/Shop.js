@@ -16,7 +16,7 @@ function Shop({ getProduct, productData }) {
 		getProduct();
 		setIsLoading(false);
 	}, [getProduct]);
-
+console.log(productData)
 	return (
 		<aside>
 			<section className='category'>
@@ -24,9 +24,10 @@ function Shop({ getProduct, productData }) {
 			</section>
 			{isLoading && <Spinner />}
             <div className='shop__list'>
-                {productData ? productData.products.map((product) => (
-                    <Product className='shop__list' key={product._id} product={product} />
-                )) : null}
+                {productData.products.map((product) => (
+					<Product className='shop__list' key={product._id} product={product} />
+					
+                ))}
             </div>
 
 			<Footer />
