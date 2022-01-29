@@ -3,7 +3,9 @@ import ProductActionTypes from '../constants/productTypes';
 
 export const getProducts = () => async (dispatch) => {
 	try {
-		const { data } = await axios.get('/api/products');
+		const { data } = await axios.get(
+			'https://beardmen-store-api.herokuapp.com/api/products'
+		);
 		dispatch({
 			type: ProductActionTypes.GET_PRODUCT,
 			payload: data.data.products,
@@ -21,7 +23,10 @@ export const getProducts = () => async (dispatch) => {
 
 export const addProducts = (product) => async (dispatch) => {
 	try {
-		const { data } = await axios.get('/api/products', product);
+		const { data } = await axios.get(
+			'https://beardmen-store-api.herokuapp.com/api/products',
+			product
+		);
 		dispatch({
 			type: ProductActionTypes.ADD_PRODUCT,
 			payload: {
@@ -50,7 +55,7 @@ export const addProducts = (product) => async (dispatch) => {
 
 export const updateProduct = (id, product) => (dispatch) => {
 	axios
-		.patch(`/${id}`, product)
+		.patch(`https://beardmen-store-api.herokuapp.com/${id}`, product)
 		.then((res) =>
 			dispatch({
 				type: ProductActionTypes.UPDATE_PRODUCT,

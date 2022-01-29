@@ -3,7 +3,10 @@ import axios from 'axios';
 
 export const signInUser = (email, password) => async (dispatch) => {
 	try {
-		const { data } = await axios.post('/api/users/login', { email, password });
+		const { data } = await axios.post(
+			'https://beardmen-store-api.herokuapp.com/api/users/login',
+			{ email, password }
+		);
 
 		dispatch({
 			type: userActionType.SIGN_IN_SUCCESS,
@@ -25,12 +28,15 @@ export const signInUser = (email, password) => async (dispatch) => {
 export const signUpUser =
 	(name, lastName, email, password) => async (dispatch) => {
 		try {
-			const { data } = await axios.post('/api/users/signup', {
-				name,
-				lastName,
-				email,
-				password,
-			});
+			const { data } = await axios.post(
+				'https://beardmen-store-api.herokuapp.com/api/users/signup',
+				{
+					name,
+					lastName,
+					email,
+					password,
+				}
+			);
 
 			dispatch({
 				type: userActionType.SIGN_UP_SUCCESS,
