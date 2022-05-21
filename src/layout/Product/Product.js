@@ -10,17 +10,18 @@ function Product({ product, addToCart }) {
 
 	return (
 		<>
-			<div className='product__container'>
+			<div>
 				<div key={product._id} className='product__items'>
-					<a href={`/product/${product._id}`}>
-						<img className='product__img' src={image} alt={name} />
-					</a>
-					<a href={`/product/${product._id}`}>
-						<p className='product__text'>{name}</p>
-					</a>
+					<div >
+						<a href={`/product/${product._id}`}>
+							<img className='product__img' src={image} alt={name} />
+						</a>
+						<a href={`/product/${product._id}`}>
+							<p className='product__text'>{name}</p>
+						</a>
 
-					<p className='product__text'>#{price}</p>
-
+						<p className='product__text'>#{price}</p>
+					</div>
 					<div className='product__btn'>
 						<button
 							className='products__btn'

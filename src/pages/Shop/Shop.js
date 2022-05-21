@@ -16,22 +16,32 @@ function Shop({ getProduct, productData }) {
 		getProduct();
 		setIsLoading(false);
 	}, [getProduct]);
-console.log(productData)
-	return (
-		<aside>
-			<section className='category'>
-				<p>Shop</p>
-			</section>
-			{isLoading && <Spinner />}
-            <div className='shop__list'>
-                {productData.products.map((product) => (
-					<Product className='shop__list' key={product._id} product={product} />
-					
-                ))}
-            </div>
 
+
+
+	return (
+		<>
+			<aside className='container'>
+				<div className='row'>
+					<section>
+						<p>Shop</p>
+					</section>
+					{isLoading && <Spinner />}
+					<div className='shop__list'>
+						{productData.products.map((product) => (
+							<div>
+								<Product
+									className='shop__list'
+									key={product._id}
+									product={product}
+								/>
+							</div>
+						))}
+					</div>
+				</div>
+			</aside>
 			<Footer />
-		</aside>
+		</>
 	);
 }
 

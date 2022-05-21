@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.css';
 // import {Link} from 'react-router-dom'
 import './App.css';
 import CheckOut from './layout/Checkout/Checkout';
