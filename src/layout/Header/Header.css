@@ -1,26 +1,48 @@
 header {
-  background-color:  #570041;
-  height: 36rem;
-}
+  background-color:  rgb(39, 0, 30) ;
 
+  height: 100%;
+  position: relative;
+  /* z-index: 99; */
+  padding: 15rem;
+}
 .header {
-  padding-top: 1rem;
+  padding-top: 8rem;
   padding-left: 6rem;
 }
 
 .header__h1 {
   color: white;
-  min-width: 4rem;
-  font-size: 4rem;
+  /* min-width: 4rem; */
+  font-size: 65px;
 }
 
 .header__p {
   color: white;
   font-size: 16px;
-  max-width: 260px;
+  /* width: 260px; */
   padding-top: 2rem;
-  line-height: 1.5;
+  line-height: 1.7;
 }
+
+.header__img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+
+/* 
+.header {
+  padding-top: 1rem;
+  padding-left: 6rem;
+}
+
+
+
 
 .header__btn {
   
@@ -28,12 +50,7 @@ header {
 }
 
 
-.header__img {
-  height: 29rem;
-  position: absolute;
-  left: 28rem;
-  top: 8rem;
-}
+
 
 
 @media(max-width:67.5rem) {
@@ -188,4 +205,4 @@ header {
   font-weight: 600;
   padding-left: 1.9rem;
 }
-}
+} */

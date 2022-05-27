@@ -8,12 +8,13 @@
 }
 
 .sidenav__icon-bar {
-  position: absolute;
+  position: fixed;
   top: 0;
   margin: 34px;
    color: #ffffff;
   font-size: 30px;
   cursor: pointer;
+  z-index: 100;
 }
 
 .sidenav__hidden {

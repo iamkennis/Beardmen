@@ -1,5 +1,5 @@
 import './Checkout.css';
-import Cart from '../../layout/Cart/Cart';
+import Cart from '../Cart/Cart';
 import { connect, useSelector } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { selectCartProducts, selectCartTotal } from '../../Utils/cartSelector';

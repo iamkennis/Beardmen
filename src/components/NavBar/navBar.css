@@ -3,7 +3,11 @@
   flex-direction: row;
   justify-content: flex-end;
   padding: 35px;
-  background-color: #570041;
+  width: 100%;
+    /* background-color: rgba(0, 43, 6, 0.5); */
+  background-color: rgba(56, 56, 56, 0.384);
+  position:fixed;
+  z-index: 100;
 }
 
 /* .logo {

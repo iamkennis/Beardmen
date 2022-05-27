@@ -1,6 +1,6 @@
 import {NavLink} from 'react-router-dom'
 import './navBar.css'
-import NavData from '../NavData/navData'
+import NavData from './navData'
 import CartIcon from '../CartIcon/cartIcon'
 // import CartBox from '../CartBox/CartBox';
 import {useDispatch, useSelector } from 'react-redux'

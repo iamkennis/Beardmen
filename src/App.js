@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 // import {Link} from 'react-router-dom'
 import './App.css';
 import CheckOut from './layout/Checkout/Checkout';
-import NavBar from './components/Nav/navBar';
+import NavBar from './components/NavBar/navBar';
 import Shop from './pages/Shop/Shop'; 
 import SignIn from './pages/SignIn/signIn';
 import SignUp from './pages/SignUp/signUp'

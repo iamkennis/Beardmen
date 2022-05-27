@@ -15,7 +15,7 @@ function Shop({ getProduct, productData }) {
 		setIsLoading(true);
 		getProduct();
 		setIsLoading(false);
-	}, [getProduct]);
+	}, [isLoading,getProduct]);
 
 
 
