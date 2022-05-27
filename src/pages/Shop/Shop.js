@@ -28,7 +28,7 @@ function Shop({ getProduct, productData }) {
 					</section>
 					{isLoading && <Spinner />}
 					<div className='shop__list'>
-						{productData.products.map((product) => (
+						{productData?.products?.map((product) => (
 							<div>
 								<Product
 									className='shop__list'
@@ -40,7 +40,7 @@ function Shop({ getProduct, productData }) {
 					</div>
 				</div>
 			</aside>
-			<Footer />
+			{/* <Footer /> */}
 		</>
 	);
 }

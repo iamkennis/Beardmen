@@ -31,7 +31,6 @@ a{
 }
 
 html {
-  font-size: 62.5%;
   box-sizing: border-box;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -61,8 +60,8 @@ html {
 body {
   font-family: Karla, sans-serif;
   box-sizing: border-box;
-  overflow-y: auto;
-  overflow-x: hidden;
+  /* overflow-y: hidden;
+  overflow-x: hidden; */
   /* height: 100vh; */
 }
 

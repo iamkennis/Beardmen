@@ -25,8 +25,8 @@ function Header(props) {
 						</Link>
 					</section>
 				</div>
-				<section className='col-sm-6'>
-					<img className='header__img' src={headerimage} alt='HeaderImage' />
+				<section className='header__img col-sm-6'>
+					<img  src={headerimage} alt='HeaderImage' />
 				</section>
 			</div>
 		</header>

@@ -8,6 +8,7 @@
   background-color: rgba(56, 56, 56, 0.384);
   position:fixed;
   z-index: 100;
+  overflow: hidden;
 }
 
 /* .logo {
@@ -30,7 +31,7 @@
 }
 
 .nav__link:hover {
-  color:#ff00bf ;
+  color:rgb(0, 85, 41);
 }
 
 
@@ -43,10 +44,6 @@
   font-size: 25px;
 }
 
-.nav__logo {
-  color: red;
-  font-size: 24px;
-}
 
 .nav__icon_bar {
   color: #070707;
@@ -60,21 +57,16 @@
 }
 
 @media(max-width:992px) {
-  .nav__links {
+  /* .nav__links {
     display: none;
-  }
-  /* .icon-shop{
-     display: none;
   } */
 }
 
 @media(max-width:768px) {
+
    .nav__links {
     display: none;
   }
-  /* .icon-shop{
-     display: none;
-  } */
 }
 
 

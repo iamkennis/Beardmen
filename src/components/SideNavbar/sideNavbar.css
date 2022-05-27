@@ -1,8 +1,7 @@
 .sidenav__bar{
-    position: absolute;
-    background-color: #2f0024;
-    width: 25rem;
-    height: 65rem;
+    position: relative;
+    background-color:rgb(24, 0, 18);
+   padding: 15rem;
     top: 0;
     z-index: 1;
 }
@@ -24,19 +23,20 @@
 .sidenav__links {
   display: flex;
   flex-direction: column;
-  padding: 100px;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
 }
 
 .sidenav__link{
   text-decoration: none;
-  font-size: 18px;
+  font-size: 16px;
   color: #ffffff;
   padding-bottom: 44px;
-  margin: 0 0 0 60px;
 }
 
 .sidenav__link:hover {
- color: #4848ff;
+  color: rgb(0, 85, 41);
 }
 
 
@@ -46,61 +46,6 @@
 }
 
 
-.sidenav__icon-times {
-  color: #ffffff;
-  position: relative;
-  left: 20rem;
-  margin: 25px;
-  font-size: 28px;
-  cursor: pointer;
-}
-
 .shop__cart {
   margin-left: 40px;
 }
-
-@media(max-width:576px) {
-   .sidenav__bar{
-     width: 26rem;
-   }
-
-   .sidenav__link {
-     font-size: 16px;
-     margin: 0 0 0 30px;
-   }
-
-   .shop__cart {
-    margin-left: 15px;
-   }
-
-  .sidenav__icon-times {
-  left: 19rem;
-  margin-top: 4rem;
-  font-size: 24px;
-  
-  }
- 
-
-}
-
-@media(max-width:376px) {
-   .sidenav__bar{
-     width: 20rem;
-   }
-
-    .sidenav__link {
-     font-size: 16px;
-     margin: 0 0 0 20px;
-   }
-
-   .sidenav__icon-times {
-    left: 14rem;
-    margin-top: 4rem;
-    font-size: 26px;
-   }
-
-   .shop__cart {
-    margin-left: 8px;
-   }
-}
-
