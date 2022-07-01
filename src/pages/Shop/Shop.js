@@ -9,8 +9,9 @@ function Shop() {
 				<section>
 					<p>Shop</p>
 				</section>
-				
-				<Product />
+				<div>
+					<Product />
+				</div>
 			</div>
 		</>
 	);

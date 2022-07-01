@@ -1,14 +1,17 @@
   .shop_container{
-    margin: 80px auto 0;
-    height: 100%;
-    padding: 150px;
+     /* background-color: #000000; */
+      position: relative;
+        padding: 100px;
+        min-height: 100vh;
+        overflow: hidden;
+    /* padding: 150px; */
   }
 
-p{
+/* p{
   font-size: 1.8rem;
-  /* font-family: bold; */
+
   color: #000;
-}
+} */
 
 @media (max-width: 45rem) {
   .shop_container{

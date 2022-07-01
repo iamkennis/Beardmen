@@ -5,6 +5,7 @@ import { addToCart } from '../../actions/cartAction';
 import { getProducts } from '../../actions/productAction';
 import { useDispatch, useSelector } from 'react-redux'
 import Spinner from '../../components/Spinner/Spinner';
+// import Button from '../../components/Button/Button';
 
 function Product({ addToCart}) {
 	const dispatch = useDispatch();
@@ -21,7 +22,9 @@ function Product({ addToCart}) {
 		<>
 			<div className='product__items'>
 				{loading ? (
-					<Spinner />
+				
+						<Spinner />
+					
 				) : (
 					products?.map((data, index) => (
 						<div className='product__lists' key={data._id}>
@@ -38,9 +41,7 @@ function Product({ addToCart}) {
 
 							<p className='product__text'>#{data.price}</p>
 							{/* </div> */}
-							<button
-								className='products__btn'
-								onClick={() => addToCart(data)}>
+							<button className='products__btn' onClick={() => addToCart(data)}>
 								Add
 							</button>
 						</div>

@@ -2,7 +2,7 @@ header {
   background-color: #0B2B40;
   position: relative;
   padding: 100px;
- overflow: hidden;
+  overflow: hidden;
   z-index: 99;
 }
 
@@ -11,7 +11,6 @@ header {
   flex-direction: column;
   justify-content: center;
   padding: 0px 50px 0;
-  /* align-items: center; */
 }
 
 .header__h1 {
@@ -22,20 +21,6 @@ header {
   padding-bottom: 1.5rem;
 }
 
-/* .header{
-  animation: slide-in 1000ms;
-  animation-timing-function: linear;
-}
-
-@keyframes slide-in {
-  from {
-    transform: translateX(-100%);
-  }
-
-  to {
-    transform: translateX(0%);
-  }
-} */
 
 .header__p {
   font-family: 'Exo';
@@ -45,21 +30,6 @@ header {
   padding-bottom: 1.5rem;
   line-height: 1.7;
 }
-
-/* .header__p {
-  animation: slide-in 1000ms;
-  animation-timing-function: linear;
-}
-
-@keyframes slide-in {
-  from {
-    transform: translateX(-100%);
-  }
-
-  to {
-    transform: translateX(0%);
-  }
-} */
 
 .header__img img {
   height: 100%;
@@ -134,8 +104,4 @@ header {
             font-weight: 600;
           font-size: 32px;
         }
-
-  /* button{
-    width: 60%;
-  } */
 }
