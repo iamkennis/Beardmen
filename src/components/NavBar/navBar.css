@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: flex-end;
   padding: 35px;
-  background-color: #0B2B40;
+  background-color: #051925;
   position:fixed;
   top: 0;
   bottom: 0;
@@ -37,7 +37,15 @@
   color:#89D99D;
 }
 
-
+.logo {
+  width: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 15px 35px auto;
+  cursor: pointer;
+  z-index: 100;
+}
 
 .nav__links {
   padding-left: 55px;
@@ -66,7 +74,9 @@
 }
 
 @media(max-width:768px) {
-
+.logo{
+  margin: 15px 300px auto;
+}
    .nav__links {
     display: none;
   }

@@ -1,6 +1,8 @@
 .checkout{
    margin: 150px auto 0;
-   padding: 150px;
+   padding: 80px;
+   overflow: hidden;
+   min-height: 80vh;
 }
 
  .checkout__text{
@@ -12,21 +14,23 @@
 .checkout__h1{
   font-family: 'Exo';
     font-weight: 600;
-    font-size: 2rem;
+    font-size: 35px;
     color: #0e0e41;
 }
 
 .checkout__p{
   font-family: 'Exo';
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 20px;
     color: #0e0e41;
 }
 
+.checkout-sm {
+  display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 .checkout__span{
-    position: absolute;
-    left: 10rem;
-    /* top: 0; */
     font-family: 'Exo';
       font-weight: 600;
   font-size:16px;
@@ -57,12 +61,32 @@
     text-align: center;
 }
 
-@media(max-width: 36rem) {
-.checkout__btn{
-     text-align: center;
-     position: relative;
-  top: 1.6rem;
-  left: 13rem;
+@media(max-width:768px) {
+.checkout{
+  margin: 80px auto 0;
+}
+.checkout-sm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+   align-items: center;
+   gap: 2rem;
+}
+
+.checkout__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkout__h1 {
+  font-size: 20px;
+}
+
+.checkout__p {
+  font-size: 15px;
+  text-align: center;
 }
 
 }

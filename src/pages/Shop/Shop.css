@@ -1,17 +1,10 @@
   .shop_container{
-     /* background-color: #000000; */
       position: relative;
         padding: 100px;
         min-height: 100vh;
         overflow: hidden;
-    /* padding: 150px; */
   }
 
-/* p{
-  font-size: 1.8rem;
-
-  color: #000;
-} */
 
 @media (max-width: 45rem) {
   .shop_container{

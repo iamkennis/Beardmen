@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     background-color: #ffffff;
-    height: 35vh;
+    /* height: 35vh; */
 }
 
 .cart__items {
@@ -14,20 +14,22 @@
 .cart__modal {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 
 .cart__h1{
-    font-size: 1.1rem;
+    font-size: 16px;
     color: #0e0e41;
 }
 
 .cart__img {
-    height: 9rem;
+    height: 200px;
 }
 
 .cart__span {
-  font-size: 1rem;
+  font-size: 16px;
   padding-top: 0.5rem;
 }
 
@@ -47,7 +49,7 @@
   background-color:#c7c7c7;
   color: white;
   margin: .7rem;
-  font-size: 14px;
+  font-size: 12px;
    padding: 3px;
   border-radius: 2px;
 cursor: pointer;
@@ -58,4 +60,20 @@ cursor: pointer;
     margin-top: 10px;
     color: black;
     font-size: 16px;
+}
+
+@media(max-width:768px) {
+.cart__h1 {
+        font-size: 14px;
+        color: #0e0e41;
+    }
+
+    .cart__img {
+        height: 100px;
+    }
+
+        .cart__span {
+            font-size: 14px;
+            padding-top: 0.5rem;
+        }
 }

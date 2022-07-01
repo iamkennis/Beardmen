@@ -1,12 +1,10 @@
-// import Button from '../../components/Button/Button'
 import './signUp.css';
-import { useState,useEffect } from 'react';
-import Footer from '../../layout/Footer/Footer';
+import { useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { signUpUser } from '../../actions/userAction';
 import BtnSpinner from '../../shared/BtnSpinner/btnSpinner';
 import { Redirect } from 'react-router-dom';
-import { Toaster, toast } from 'react-hot-toast';
+import { Toaster} from 'react-hot-toast';
 
 function SignUp(props) {
 	const [name, setName] = useState('');
@@ -17,15 +15,15 @@ function SignUp(props) {
 	const dispatch = useDispatch();
 
 	const user = useSelector((state) => state.user);
-	const { userDetails, loading,token } = user;
+	const {loading,token } = user;
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		dispatch(signUpUser(name, lastName, email, password));
-		// setName('');
-		// setLastName('');
-		// setEmail('');
-		// setPassword('');
+		setName('');
+		setLastName('');
+		setEmail('');
+		setPassword('');
 	};
 
 
@@ -45,8 +43,6 @@ function SignUp(props) {
 					},
 				}}
 			/>
-
-			{/* {error && <p className='error__message'>{error}</p>} */}
 			<div className='signup__field'>
 				<p className='signup__p'>Please sign in below to continue</p>
 				<form className='signup__form' onSubmit={handleSubmit}>
@@ -116,7 +112,6 @@ function SignUp(props) {
 					</section>
 				</form>
 			</div>
-			{/* <Footer /> */}
 		</div>
 	);
 }

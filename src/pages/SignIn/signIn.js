@@ -78,10 +78,19 @@ function SignIn() {
 						/>
 					</section>
 					<section className='form__btn'>
-					{token ? <Redirect to='/shop' /> :
-						<Button type='submit' name='button'>
-							{loading ? <BtnSpinner /> : 'SignIn'}
-						</Button>}
+						{token ? (
+							<Redirect to='/shop' />
+						) : (
+							<Button type='submit' name='button'>
+								{loading ? (
+								
+										<BtnSpinner />
+									
+								) : (
+									'SignIn'
+								)}
+							</Button>
+						)}
 					</section>
 				</form>
 				<section className='forget__links'>

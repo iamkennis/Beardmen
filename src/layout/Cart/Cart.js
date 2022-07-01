@@ -11,19 +11,21 @@ function Cart ({cartProduct,addToCart,removeCart}) {
 				<div className='cart__modal'>
 					<img className='cart__img' src={image} alt='products' />
 					<div className='cart__items'>
-						<h1 className='cart__h1'>{name}</h1>
+						<h3 className='cart__h1'>{name}</h3>
 						<span className='cart__span'>
 							{quantity} x #{price}
 						</span>
 						<div className='span__icon'>
 							<span
 								className='cart__btn'
-								onClick={() => removeCart(cartProduct)}>--</span>
+								onClick={() => removeCart(cartProduct)}>
+								➖
+							</span>
 							<span>{quantity}</span>
 							<span
 								className='cart__btn'
 								onClick={() => addToCart(cartProduct)}>
-								+
+								➕
 							</span>
 						</div>
 					</div>

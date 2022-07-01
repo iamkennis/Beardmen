@@ -2,7 +2,6 @@ import {NavLink} from 'react-router-dom'
 import './navBar.css'
 import NavData from './navData'
 import CartIcon from '../CartIcon/cartIcon'
-// import CartBox from '../CartBox/CartBox';
 import {useDispatch, useSelector } from 'react-redux'
 import { signOutUser } from '../../actions/userAction'
 
@@ -20,7 +19,6 @@ function NavBar () {
     const { users, token } = user
     return (
 			<>
-				{/* <h5 className='logo'>BeardMen</h5> */}
 				<nav className='container-fluid nav'>
 					<section className='nav__links'>
 						{NavData.map((item, index) => {

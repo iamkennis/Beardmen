@@ -9,38 +9,43 @@ import { Redirect } from 'react-router-dom';
 function CheckOut({ cartProducts, total, product }) {
 	const user = useSelector((state) => state.user);
 	const { userDetails } = user;
-	console.log(total)
+	
 	return (
 		<section className='checkout'>
 			<div className='checkout__text'>
 				<h1 className='checkout__h1'>Your cart</h1>
 				<p className='checkout__p'>Item ships at checkout</p>
-				<div className='checkout-sm'>
-					{userDetails ? (
-						<Button>Check Out</Button>
-					) : (
-						<Redirect to='/login' />
-					)}
-				</div>
 			</div>
 			<hr />
 			<div>
 				<div className='checkout__modal'>
 					<div>
-						{cartProducts.length ? (
-							cartProducts.map((cartProduct, idx) => (
-								<Cart key={cartProduct.id} cartProduct={cartProduct} />
-							))
-						) : (
+						{cartProducts.length < 0 ? (
 							<p className='checkout__p-text'>Your cart is empty</p>
+						) : (
+							cartProducts.map((cartProduct, idx) => (
+								<div>
+									<Cart key={cartProduct.id} cartProduct={cartProduct} />
+									<hr />
+								</div>
+							))
 						)}
 					</div>
+				</div>
+				<div className='checkout-sm'>
 					<div className='checkout__span'>
 						<span>Total:#{total}</span>
 					</div>
+					<div className='checkout-btn'>
+						{userDetails ? (
+							<Button>Check Out</Button>
+						) : (
+							<Redirect to='/login' />
+						)}
+					</div>
 				</div>
+				<hr />
 			</div>
-			<hr />
 		</section>
 	);
 }
