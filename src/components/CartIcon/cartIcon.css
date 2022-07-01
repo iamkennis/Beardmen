@@ -17,3 +17,10 @@
     right:10px;
 }
 
+@media(max-width:768px) {
+  .icon__number {
+      position: relative;
+      left: -6px;
+      bottom: 5px;
+    }
+}
