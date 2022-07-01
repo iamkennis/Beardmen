@@ -2,20 +2,22 @@ button{
   min-width: 150px;
   width: auto;
   height:  55px;
-  background-color:#2b0021;
+  background-color: #1E5959;
   color: #ffffff;
   letter-spacing: 0.5px;
   font-size: 16px;
+  font-family: 'Exo';
   font-weight: bolder;
   border: none;
   border-radius: 5px;
   padding: 0 35px 0 35px;
   cursor: pointer;
   text-transform: capitalize;
+  transition: all .35s;
 }
 
 button:hover {
-   background-color:#7c005d;
+   background-color:#3B8C6E;
 }
 
 /* @media(max-width:992px) {

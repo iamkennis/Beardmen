@@ -7,17 +7,21 @@
 }
 
 .section__ul-left{
+  font-family: 'Exo';
+    font-weight: 400;
   font-size: 1.2rem;
- color: #570041;
+ color: #164773;
   padding: 25px;
 }
 
 
 .section__h1-left {
+  font-family: 'Exo';
+    font-weight: 600;
   font-size: 50px;
   padding-top: 80px;
    padding-left: 18px;
-  color: #570041;
+  color: #164773;
 }
 
 .section__left-text {

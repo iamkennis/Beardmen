@@ -1,41 +1,59 @@
 import './Product.css';
+import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { addToCart } from '../../actions/cartAction';
-// import {useParams} from 'react-router-dom'
+import { getProducts } from '../../actions/productAction';
+import { useDispatch, useSelector } from 'react-redux'
+import Spinner from '../../components/Spinner/Spinner';
 
-function Product({ product, addToCart }) {
-	const { name, image, price } = product;
+function Product({ addToCart}) {
+	const dispatch = useDispatch();
 
-	// const {id} = useParams
+	const product = useSelector((state) => state.products);
+	const { products, loading } = product;
+
+	useEffect(() => {
+		dispatch(getProducts());
+	}, [dispatch]);
+
 
 	return (
 		<>
-			<div className='product__container'>
-				<div key={product._id} className='product__items'>
-					<a href={`/product/${product._id}`}>
-						<img className='product__img' src={image} alt={name} />
-					</a>
-					<a href={`/product/${product._id}`}>
-						<p className='product__text'>{name}</p>
-					</a>
+			<div className='product__items'>
+				{loading ? (
+					<Spinner />
+				) : (
+					products?.map((data, index) => (
+						<div className='product__lists' key={data._id}>
+							{/* <div key={data.id}> */}
+							<figure>
+								<img
+									className='product__img'
+									src={data.image}
+									alt={data.name}
+								/>
+							</figure>
 
-					<p className='product__text'>#{price}</p>
+							<p className='product__text'>{data.name}</p>
 
-					<div className='product__btn'>
-						<button
-							className='products__btn'
-							onClick={() => addToCart(product)}>
-							Add
-						</button>
-					</div>
-				</div>
+							<p className='product__text'>#{data.price}</p>
+							{/* </div> */}
+							<button
+								className='products__btn'
+								onClick={() => addToCart(data)}>
+								Add
+							</button>
+						</div>
+					))
+				)}
 			</div>
 		</>
 	);
 }
 
+
 const mapDispatchToProps = (dispatch) => ({
-	addToCart: (product) => dispatch(addToCart(product)),
+	addToCart: (data) => dispatch(addToCart(data))
 });
 
 export default connect(null, mapDispatchToProps)(Product);
