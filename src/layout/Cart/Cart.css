@@ -32,39 +32,28 @@
 }
 
 
-
-.icon__minus {
-     margin-right: 0.5rem;
-    font-size: 12px;
-    cursor: pointer;
-    color: #ffffff;
-}
-
-.icon__plus {
-    margin-left: 0.5rem;
-    font-size: 12px;
-    cursor: pointer;
-     color: #ffffff;
-}
-
 .other__btn {
     position: relative;
     bottom: 9rem;
     margin-left: 49rem;
 }
 
+.span__icon{
+    /* gap:6rem; */
+    margin-top: 1rem;
+}
+
 .cart__btn {
-  background-color:#570041;
+  background-color:#c7c7c7;
   color: white;
-  margin-top: 1rem;
-   padding: 0 30px 0 30px;
-     min-width: 90px;
-     height:  44px;
+  margin: .7rem;
+  font-size: 14px;
+   padding: 3px;
   border-radius: 2px;
+cursor: pointer;
+
 }
-.cart__btn:hover{
-    background-color: #7c005d;
-}
+
 .cart__text-link {
     margin-top: 10px;
     color: black;

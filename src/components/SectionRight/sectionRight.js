@@ -5,7 +5,7 @@ import './sectionRight.css'
 function SectionRight()
 {
     return (
-        <div>
+        <div className='container-fluid'>
                 <div className='section__right'>
                     <div className='section__right-text'>
                         <h1 className='section__h1-right'>You get top-<br /> shelf products.</h1>
@@ -18,7 +18,7 @@ function SectionRight()
 
                   <img className='section__img-right' src={ImageRight} alt='' />
                 </div>
-        </div>
+         </div>
     )
 }
 

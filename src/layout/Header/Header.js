@@ -7,15 +7,18 @@ function Header(props) {
 	return (
 		<header className='container-fluid'>
 			<div className='row'>
+				<section className=' header__img_mobile'>
+					<img src={headerimage} alt='HeaderImage' />
+				</section>
 				<div className='col-sm-6 header'>
 					<section>
-						<h1 className='header__h1'>
+						<h1 data-scroll className='header__h1'>
 							HOW DO YOU
 							<br />
 							GET INVOLVE
 						</h1>
 					</section>
-					<p className='header__p'>
+					<p data-scroll className='header__p'>
 						Tell us how you get invovle in grooming, and well <br />
 						recommend the perfect products
 					</p>
@@ -26,7 +29,7 @@ function Header(props) {
 					</section>
 				</div>
 				<section className='header__img col-sm-6'>
-					<img  src={headerimage} alt='HeaderImage' />
+					<img src={headerimage} alt='HeaderImage' />
 				</section>
 			</div>
 		</header>

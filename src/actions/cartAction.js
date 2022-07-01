@@ -1,16 +1,16 @@
-import CartActionTypes from "../constants/cartTypes";
+import {ADD_TO_CART,REMOVE_CART} from "../constants";
 // import axois from 'axios'
 
-export const toggleMenu = () => ({
-    type: CartActionTypes.TOGGLE_MENU
-})
+// export const toggleMenu = () => ({
+//     type: CartActionTypes.TOGGLE_MENU
+// })
 
 export const addToCart = product => ({
-    type: CartActionTypes.ADD_TO_CART,
+    type: ADD_TO_CART,
     payload: product
 })
 
 export const removeCart = product => ({
-    type: CartActionTypes.REMOVE_CART,
+    type: REMOVE_CART,
     payload: product
 })

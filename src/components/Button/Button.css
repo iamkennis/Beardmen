@@ -2,10 +2,11 @@ button{
   min-width: 150px;
   width: auto;
   height:  55px;
-  background-color:rgb(0, 85, 21);
+  background-color: #1E5959;
   color: #ffffff;
   letter-spacing: 0.5px;
   font-size: 16px;
+  font-family: 'Exo';
   font-weight: bolder;
   border: none;
   border-radius: 5px;
@@ -16,7 +17,7 @@ button{
 }
 
 button:hover {
-   background-color:rgb(0, 85, 41);
+   background-color:#3B8C6E;
 }
 
 /* @media(max-width:992px) {

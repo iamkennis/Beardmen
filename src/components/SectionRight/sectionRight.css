@@ -12,16 +12,20 @@
 }
 
 .section__ul-right{
+    font-family: 'Exo';
+      font-weight: 400;
   font-size: 1.2rem;
-  color: #570041;
+  color: #164773;
   font-weight: 400;
   padding: 25px;
 }
 
 .section__h1-right {
+  font-family: 'Exo';
+    font-weight: 600;
   padding-left: 30px;
   font-size: 50px;
-  color: #570041;
+  color:#164773;
 }
 .section__img-right{
   height: 450px;

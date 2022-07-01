@@ -1,8 +1,9 @@
 import './signIn.css';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState} from 'react';
+import { Toaster} from 'react-hot-toast';
 import Button from '../../components/Button/Button';
-import Footer from '../../layout/Footer/Footer';
+import BtnSpinner from '../../shared/BtnSpinner/btnSpinner';
 import { useDispatch, useSelector } from 'react-redux';
 import { signInUser } from '../../actions/userAction';
 import { Redirect } from 'react-router-dom';
@@ -14,7 +15,8 @@ function SignIn() {
 	const dispatch = useDispatch();
 
 	const user = useSelector((state) => state.user);
-	const { userDetails, error } = user;
+	const {loading,token} = user;
+	
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -25,49 +27,61 @@ function SignIn() {
 
 	return (
 		<>
-			<section className='signin__box'>
-				{error && <p className='error__message'>{error}</p>}
+			<Toaster
+				position='top-center'
+				reverseOrder={false}
+				gutter={8}
+				toastOptions={{
+					duration: 5000,
+					style: {
+						padding: '20px',
+						fontSize: '13px',
+						fontWeight: 'bolder',
+						borderRadius: '15px',
+					},
+				}}
+			/>
+
+			<section className='container-fluid signin__box'>
 				<h1 className='sign__h1'>Welcome back!</h1>
 				<p className='sign__p'>Please sign in below to continue</p>
 				<form onSubmit={handleSubmit}>
-					<section className='signup__container'>
+					<section>
 						<div>
-							<label htmlFor='email' placeholder='example@mail.com'>
-								Email
-							</label>
+							<label>Email</label>
 						</div>
 
 						<input
 							type='text'
 							id='email'
-							//  ref={emailRef}
+							required
+							htmlFor='email'
+							placeholder='example@mail.com'
 							value={email}
 							onChange={(e) => setEmail(e.target.value)}
 						/>
 					</section>
 
-					<section className='signup-container'>
+					<section>
 						<div>
-							<label htmlFor='password' placeholder='*******'>
-								Password
-							</label>
+							<label>Password</label>
 						</div>
 						<input
 							type='password'
 							id='password'
 							//  ref={passwordRef}
+							htmlFor='password'
+							placeholder='*******'
 							value={password}
+							required
 							onChange={(e) => setPassword(e.target.value)}
 						/>
 					</section>
 					<section className='form__btn'>
-						{userDetails ? (
-							<Redirect to='/shop' />
-						) : (
-							<Button type='submit' name='button'>
-								sign in
-							</Button>
-						)}
+					{token ? <Redirect to='/shop' /> :
+						<Button type='submit' name='button'>
+							{loading ? <BtnSpinner /> : 'SignIn'}
+						</Button>}
 					</section>
 				</form>
 				<section className='forget__links'>
@@ -80,7 +94,7 @@ function SignIn() {
 					</Link>
 				</section>
 			</section>
-			<Footer />
+			{/* <Footer /> */}
 		</>
 	);
 }

@@ -1,4 +1,4 @@
-import {FaGripLines} from 'react-icons/fa'
+import {FaTimes,FaGripLines} from 'react-icons/fa'
 import { NavLink} from 'react-router-dom'
 import {connect} from 'react-redux'
 import './sideNavbar.css'
@@ -6,12 +6,17 @@ import NavData from '../NavBar/navData'
 import {useDispatch, useSelector } from 'react-redux'
 import CartIcon from '../CartIcon/cartIcon'
 import { signOutUser } from '../../actions/userAction'
-import {toggleMenu} from '../../actions/cartAction'
+// import {toggleMenu} from '../../actions/cartAction'
+import {useState} from 'react';
 
+function SideNav() {
+	const [hidden, setHidden] = useState(true)
 
-function SideNav ({ toggleMenu, hidden }) {
+	function toggleMenu() { 
+		setHidden(!hidden)
+	}
+
     const dispatch = useDispatch()
-
     function signoutHandler () {
         dispatch(signOutUser())
     }
@@ -22,9 +27,10 @@ function SideNav ({ toggleMenu, hidden }) {
 			<>
 				<FaGripLines className='sidenav__icon-bar' onClick={toggleMenu} />
 
-				{hidden ? (
+				{!hidden ? (
 					<nav className='sidenav__bar' onClick={toggleMenu}>
-						<section className='sidenav__links' onClick={toggleMenu}>
+						<FaTimes className='sidenav__icon-times' onClick={toggleMenu} />
+						<section className='sidenav__links'>
 							{NavData.map((item, index) => {
 								return (
 									<NavLink key={index} to={item.path} className='sidenav__link'>
@@ -64,12 +70,5 @@ function SideNav ({ toggleMenu, hidden }) {
 		);
 }
 
-const mapDispatchToProps = dispatch => ({
-  toggleMenu: () => dispatch(toggleMenu())
-})
 
-const mapStateToProps = ({ cart: {hidden}}) => ({
-  hidden
-})
- 
-export default connect(mapStateToProps,mapDispatchToProps)(SideNav);
+export default SideNav;

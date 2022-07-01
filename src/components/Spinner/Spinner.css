@@ -1,7 +1,12 @@
 .spinner__container {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+
 }
 .spinner__dual-ring {
   display: inline-block;

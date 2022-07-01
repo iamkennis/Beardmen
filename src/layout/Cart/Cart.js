@@ -15,18 +15,16 @@ function Cart ({cartProduct,addToCart,removeCart}) {
 						<span className='cart__span'>
 							{quantity} x #{price}
 						</span>
-						<div>
-							<button className='cart__btn'>
-								<AiFillMinusCircle
-									className='icon__minus'
-									onClick={() => removeCart(cartProduct)}
-								/>
-								{quantity}
-								<AiFillPlusCircle
-									className='icon__plus'
-									onClick={() => addToCart(cartProduct)}
-								/>
-							</button>
+						<div className='span__icon'>
+							<span
+								className='cart__btn'
+								onClick={() => removeCart(cartProduct)}>--</span>
+							<span>{quantity}</span>
+							<span
+								className='cart__btn'
+								onClick={() => addToCart(cartProduct)}>
+								+
+							</span>
 						</div>
 					</div>
 				</div>

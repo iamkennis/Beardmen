@@ -21,6 +21,7 @@ code {
 a{
   text-decoration: none;
 } */
+@import url('https://fonts.googleapis.com/css2?family=Exo&display=swap');
 
 *,
 *::before,
@@ -58,11 +59,11 @@ html {
 }
 
 body {
-  font-family: Karla, sans-serif;
+  font-family: 'Exo', sans-serif;
   box-sizing: border-box;
   /* overflow-y: hidden;
-  overflow-x: hidden; */
-  /* height: 100vh; */
+  overflow-x: hidden;
+ height: 100%; */
 }
 
 
@@ -72,7 +73,7 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px grey;
-  border-radius: 10px;
+  border-radius: 30px;
 }
 
 body::-webkit-scrollbar-thumb {
@@ -88,7 +89,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 
 
-/*! locomotive-scroll v4.1.1 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
+/* ! locomotive-scroll v4.1.1 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
 /* // html.has-scroll-smooth {
 //   overflow: hidden;
 // } */
@@ -177,7 +178,7 @@ html.has-scroll-dragging {
   bottom: 0;
 }
 
-/* a {
+ a {
   text-decoration: none;
   color: #000000;
   font-family: 'Poppins';
@@ -185,6 +186,6 @@ html.has-scroll-dragging {
   font-weight: 500;
 }
 
-a:hover {
+/* a:hover {
   color: #15CB3F;
 } */
