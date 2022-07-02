@@ -7,9 +7,6 @@ function Header(props) {
 	return (
 		<header className='container-fluid'>
 			<div className='row'>
-				<section className=' header__img_mobile'>
-					<img src={headerimage} alt='HeaderImage' />
-				</section>
 				<div className='col-sm-6 header'>
 					<section>
 						<h1 data-scroll className='header__h1'>
@@ -31,6 +28,9 @@ function Header(props) {
 				<section className='header__img col-sm-6'>
 					<img src={headerimage} alt='HeaderImage' />
 				</section>
+				{/* <section className=' header__img_mobile'>
+					<img src={headerimage} alt='HeaderImage' />
+				</section> */}
 			</div>
 		</header>
 	);
