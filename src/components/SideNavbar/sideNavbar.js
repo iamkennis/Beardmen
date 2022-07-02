@@ -1,12 +1,9 @@
 import {FaTimes,FaGripLines} from 'react-icons/fa'
 import { NavLink} from 'react-router-dom'
-import {connect} from 'react-redux'
 import './sideNavbar.css'
 import NavData from '../NavBar/navData'
 import {useDispatch, useSelector } from 'react-redux'
-import CartIcon from '../CartIcon/cartIcon'
 import { signOutUser } from '../../actions/userAction'
-// import {toggleMenu} from '../../actions/cartAction'
 import {useState} from 'react';
 
 function SideNav() {
