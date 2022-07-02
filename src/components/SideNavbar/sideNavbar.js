@@ -60,9 +60,6 @@ function SideNav() {
 									Sign In
 								</NavLink>
 							)}
-							<span>
-								<CartIcon />
-							</span>
 						</section>
 					</nav>
 				) : null}
