@@ -10,13 +10,14 @@ background-color: #f1e3d1;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 4rem;
+  margin: 6rem;
 }
 .signup__p {
   /* padding-top: 0rem;  */
   color: #000;
   width: 400px;
   text-align: center;
+  font-size: 18px;
 }
 
 input {
@@ -25,7 +26,7 @@ input {
   padding: 15px 10px;
   border-radius: 5px;
   outline: none;
-  border: 2px solid #000000;
+  border: 1px solid #000000;
 }
 
 input::placeholder {
@@ -45,7 +46,7 @@ label {
 
 .signup__btn {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-self: center;
   margin-top: 18px;
 }

@@ -48,7 +48,7 @@
       display: block;
     }
   .sidenav__icon-bar {
-      position: fixed;
+      position: absolute;
       top: 0;
       margin: 34px;
       color: #ffffff;

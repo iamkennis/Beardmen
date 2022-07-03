@@ -4,7 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { signUpUser } from '../../actions/userAction';
 import BtnSpinner from '../../shared/BtnSpinner/btnSpinner';
 import { Redirect } from 'react-router-dom';
-import { Toaster} from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
+import Button from '../../components/Button/Button';
 
 function SignUp(props) {
 	const [name, setName] = useState('');
@@ -44,7 +45,7 @@ function SignUp(props) {
 				}}
 			/>
 			<div className='signup__field'>
-				<p className='signup__p'>Please sign in below to continue</p>
+				<p className='signup__p'>Please sign up below to continue</p>
 				<form className='signup__form' onSubmit={handleSubmit}>
 					<section>
 						<div>
@@ -105,9 +106,9 @@ function SignUp(props) {
 						{token ? (
 							<Redirect to='/' />
 						) : (
-							<button type='submit' name='button'>
-								{loading ? <BtnSpinner /> : 'SignIn'}
-							</button>
+							<Button type='submit' name='button'>
+								{loading ? <BtnSpinner /> : 'Sign Up'}
+							</Button>
 						)}
 					</section>
 				</form>
