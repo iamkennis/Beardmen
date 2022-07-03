@@ -123,10 +123,6 @@ input::placeholder {
 }
 
 @media(max-width:36rem) {
-  .signin__box {
-  
-  /* padding: 3rem 1rem; */
-}
     .sign__h1 {
   font-size: 35px;
   text-align: center;
