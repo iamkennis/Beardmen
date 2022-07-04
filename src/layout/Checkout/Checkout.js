@@ -6,9 +6,14 @@ import { selectCartProducts, selectCartTotal } from '../../Utils/cartSelector';
 import Button from '../../components/Button/Button';
 import { Redirect } from 'react-router-dom';
 
-function CheckOut({ cartProducts, total, product }) {
+function CheckOut({ cartProducts, total }) {
 	const user = useSelector((state) => state.user);
-	const { userDetails } = user;
+	const { token } = user;
+
+	if (cartProducts === 0) {
+		
+							
+	}
 	
 	return (
 		<section className='checkout'>
@@ -20,16 +25,17 @@ function CheckOut({ cartProducts, total, product }) {
 			<div>
 				<div className='checkout__modal'>
 					<div>
-						{cartProducts.length < 0 ? (
-							<p className='checkout__p-text'>Your cart is empty</p>
-						) : (
-							cartProducts.map((cartProduct, idx) => (
-								<div>
-									<Cart key={cartProduct.id} cartProduct={cartProduct} />
-									<hr />
-								</div>
-							))
-						)}
+						<spa>
+							{cartProducts.length === 0 && (
+								<p className='checkout__p-text'>Your cart is empty</p>
+							)}
+						</spa>
+						{cartProducts.map((cartProduct, idx) => (
+							<div>
+								<Cart key={cartProduct.id} cartProduct={cartProduct} />
+								<hr />
+							</div>
+						))}
 					</div>
 				</div>
 				<div className='checkout-sm'>
@@ -37,11 +43,7 @@ function CheckOut({ cartProducts, total, product }) {
 						<span>Total:#{total}</span>
 					</div>
 					<div className='checkout-btn'>
-						{userDetails ? (
-							<Button>Check Out</Button>
-						) : (
-							<Redirect to='/login' />
-						)}
+						{token ? <Button>Check Out</Button> : <Redirect to='/login' />}
 					</div>
 				</div>
 				<hr />

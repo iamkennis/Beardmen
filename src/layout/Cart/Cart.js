@@ -1,11 +1,13 @@
 import './Cart.css'
-import { AiFillMinusCircle, AiFillPlusCircle} from 'react-icons/ai'
-import { connect } from 'react-redux'
 import { addToCart, removeCart } from '../../actions/cartAction'
+import {useDispatch} from 'react-redux'
 
 
-function Cart ({cartProduct,addToCart,removeCart}) {
-    const {name,image,price,quantity} = cartProduct
+function Cart ({cartProduct}) {
+	const { name, image, price, quantity } = cartProduct
+	
+const dispatch = useDispatch()
+
     return (
 			<div className='cart'>
 				<div className='cart__modal'>
@@ -18,13 +20,13 @@ function Cart ({cartProduct,addToCart,removeCart}) {
 						<div className='span__icon'>
 							<span
 								className='cart__btn'
-								onClick={() => removeCart(cartProduct)}>
+								onClick={() => dispatch(removeCart(cartProduct))}>
 								➖
 							</span>
 							<span>{quantity}</span>
 							<span
 								className='cart__btn'
-								onClick={() => addToCart(cartProduct)}>
+								onClick={() => dispatch(addToCart(cartProduct))}>
 								➕
 							</span>
 						</div>
@@ -35,11 +37,5 @@ function Cart ({cartProduct,addToCart,removeCart}) {
     
 }
 
-const mapDispatchToProps = dispatch => ({
-    addToCart: product => dispatch(addToCart(product)) ,
-    removeCart: product => dispatch(removeCart(product))
-    
-})
 
-export default
-    connect(null, mapDispatchToProps)(Cart);
+export default Cart;

@@ -1,13 +1,11 @@
 import './Product.css';
 import { useEffect } from 'react';
-import { connect } from 'react-redux';
 import { addToCart } from '../../actions/cartAction';
 import { getProducts } from '../../actions/productAction';
 import { useDispatch, useSelector } from 'react-redux'
 import Spinner from '../../components/Spinner/Spinner';
-// import Button from '../../components/Button/Button';
 
-function Product({ addToCart}) {
+function Product() {
 	const dispatch = useDispatch();
 
 	const product = useSelector((state) => state.products);
@@ -18,17 +16,16 @@ function Product({ addToCart}) {
 	}, [dispatch]);
 
 
+
 	return (
 		<>
 			<div className='product__items'>
 				{loading ? (
-				
-						<Spinner />
-					
+					<Spinner />
 				) : (
-					products?.map((data, index) => (
+					products?.map((data) => (
 						<div className='product__lists' key={data._id}>
-							{/* <div key={data.id}> */}
+			
 							<figure>
 								<img
 									className='product__img'
@@ -41,7 +38,9 @@ function Product({ addToCart}) {
 
 							<p className='product__text'>#{data.price}</p>
 							{/* </div> */}
-							<button className='products__btn' onClick={() => addToCart(data)}>
+							<button
+								className='products__btn'
+								onClick={() => dispatch(addToCart(data))}>
 								Add
 							</button>
 						</div>
@@ -53,8 +52,4 @@ function Product({ addToCart}) {
 }
 
 
-const mapDispatchToProps = (dispatch) => ({
-	addToCart: (data) => dispatch(addToCart(data))
-});
-
-export default connect(null, mapDispatchToProps)(Product);
+export default Product;
