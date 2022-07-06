@@ -81,14 +81,8 @@ function SignIn() {
 						{token ? (
 							<Redirect to='/shop' />
 						) : (
-							<Button type='submit' name='button'>
-								{loading ? (
-								
-										<BtnSpinner />
-									
-								) : (
-									'SignIn'
-								)}
+							<Button type='submit' name='button' loading={loading}>
+									SignIn
 							</Button>
 						)}
 					</section>

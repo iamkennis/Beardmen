@@ -36,7 +36,7 @@ function Product() {
 
 							<p className='product__text'>{data.name}</p>
 
-							<p className='product__text'>#{data.price}</p>
+							<p className='product__text'>₦{data.price}</p>
 							{/* </div> */}
 							<button
 								className='products__btn'

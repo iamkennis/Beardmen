@@ -106,8 +106,8 @@ function SignUp(props) {
 						{token ? (
 							<Redirect to='/' />
 						) : (
-							<Button type='submit' name='button'>
-								{loading ? <BtnSpinner /> : 'Sign Up'}
+							<Button type='submit' name='button' loading={loading}>
+								Sign Up
 							</Button>
 						)}
 					</section>
