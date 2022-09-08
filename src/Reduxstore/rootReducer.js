@@ -10,7 +10,7 @@ import userReducer from '../reducers/userReducer';
 const persistConfig = {
     key: 'root',
     storage,                                                                               
-    whitelist: [ 'cart','user']
+    whitelist: ['cart', 'user', 'products']
 }
 
 

@@ -8,7 +8,7 @@ import {
 	SIGN_UP_ERROR
 } from '../constants';
 import axios from 'axios';
-import toast from 'react-hot-toast'
+import toast from 'react-hot-toast';
 
 export const signInUser = (email, password) => async (dispatch) => {
 	dispatch({
@@ -25,9 +25,7 @@ export const signInUser = (email, password) => async (dispatch) => {
 				type: SIGN_IN_SUCCESS,
 				payload: data,
 			});
-       
-
-		toast.success('Successfully Signed in!');
+		toast.success('Successfully Signed up!');
 	} else {
 		dispatch({
 			type: SIGN_IN_ERROR,

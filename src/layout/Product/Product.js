@@ -12,8 +12,10 @@ function Product() {
 	const { products, loading } = product;
 
 	useEffect(() => {
-		dispatch(getProducts());
-	}, [dispatch]);
+		if (!products) {
+			dispatch(getProducts());
+		}
+	}, [dispatch, products]);
 
 
 
