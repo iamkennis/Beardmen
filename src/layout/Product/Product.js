@@ -12,10 +12,9 @@ function Product() {
 	const { products, loading } = product;
 
 	useEffect(() => {
-		if (!products) {
 			dispatch(getProducts());
-		}
-	}, [dispatch, products]);
+		
+	}, [dispatch]);
 
 
 
