@@ -20,6 +20,9 @@ function NavBar () {
     return (
 			<>
 				<nav className='container-fluid nav'>
+					<div>
+						<h3 className='logo'>BEARDMEN</h3>
+					</div>
 					<section className='nav__links'>
 						{NavData.map((item, index) => {
 							return (

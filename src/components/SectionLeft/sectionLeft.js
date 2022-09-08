@@ -8,11 +8,18 @@ function SectionLeft()
 				<div className='section__left'>
 					<img className='section__img-left' src={ImageLeft} alt='' />
 					<div className='section__left-text'>
-						<h1 className='section__h1-left'>
-							You get top-
-							<br /> shelf products.
-						</h1>
-						<ul className='section__ul-left'>
+						<dl>
+							<dt className='section__h1-left'>
+								You get top-
+								<br /> shelf products.
+							</dt>
+							<dd className='section__li-left'>Fine products line</dd>
+							<dd className='section__li-left'>
+								Made with premium ingredients
+							</dd>
+							<dd className='section__li-left'>Mix and match to find your perfect routine</dd>
+						</dl>
+						{/* <ul className='section__ul-left'>
 							<li className='section__li-left'>Fine products line</li>
 							<li className='section__li-left'>
 								Made with premium ingredients
@@ -20,7 +27,7 @@ function SectionLeft()
 							<li className='section__li-left'>
 								Mix and match to find your perfect routine
 							</li>
-						</ul>
+						</ul> */}
 					</div>
 				</div>
 			</div>

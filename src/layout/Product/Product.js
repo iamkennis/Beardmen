@@ -12,7 +12,8 @@ function Product() {
 	const { products, loading } = product;
 
 	useEffect(() => {
-		dispatch(getProducts());
+			dispatch(getProducts());
+		
 	}, [dispatch]);
 
 

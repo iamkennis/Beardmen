@@ -14,9 +14,8 @@
 }
 
 /* .logo {
-  font-size: 24px;
-  color: #ffffff;
-  margin-right: 15rem;
+  
+  margin-top: 1.5rem;
 } */
 
 
@@ -38,9 +37,12 @@
 }
 
 .logo {
+  font-size: 24px;
+  color: #ffffff;
+  font-weight: 800;
   width: 80px;
   position: fixed;
-  top: 0;
+  top: 20px;
   left: 0;
   margin: 15px 35px auto;
   cursor: pointer;
@@ -88,7 +90,8 @@
     display: none;
   }
   .logo{
-   display: none;
+    display: block;
+    margin: 15px 130px auto;
   }
 }
 

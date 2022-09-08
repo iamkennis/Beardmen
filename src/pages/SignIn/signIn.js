@@ -1,29 +1,63 @@
 import './signIn.css';
 import { Link } from 'react-router-dom';
-import { useState} from 'react';
+import { useState,useCallback,useEffect} from 'react';
 import { Toaster} from 'react-hot-toast';
 import Button from '../../components/Button/Button';
 import BtnSpinner from '../../shared/BtnSpinner/btnSpinner';
 import { useDispatch, useSelector } from 'react-redux';
 import { signInUser } from '../../actions/userAction';
 import { Redirect } from 'react-router-dom';
+import toast from 'react-hot-toast';
+import { validate } from 'email-validator';
+import Input  from '../../components/Input';
 
 function SignIn() {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
-
+	const [loading, setLoading] = useState(false);
+	const [disabled, setDisabled] = useState(false);
+	const [dirty, setDirty] = useState(false);
 	const dispatch = useDispatch();
 
 	const user = useSelector((state) => state.user);
-	const {loading,token} = user;
+	const {token} = user;
 	
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		dispatch(signInUser(email, password));
-		setEmail('');
-		setPassword('');
+		if (!dirty && !disabled) {
+			setDirty(true);
+		}
+		try {
+			setLoading(true);
+			dispatch(signInUser(email, password));
+			toast.success('Successfully Signed in!');
+			setLoading(false);
+		} catch ({ error }) {
+			setLoading(false);
+			console.log(error);
+		}
+		
+		
+		// setEmail('');
+		// setPassword('');
 	};
+
+		 const handleValidation = useCallback(() => {
+				const validPassword = /^(?=.*[a-zA-Z])(?=.*[0-9])/.test(password);
+
+				if (dirty) {
+					setDisabled(
+						!validate(email) || password.length < 7 || !validPassword
+					);
+				}
+			}, [email, password, dirty]);
+
+			useEffect(() => {
+				handleValidation();
+			}, [handleValidation]);
+
+
 
 	return (
 		<>
@@ -51,14 +85,13 @@ function SignIn() {
 							<label>Email</label>
 						</div>
 
-						<input
-							type='text'
+						<Input
+							type='email'
 							id='email'
-							required
 							htmlFor='email'
-							placeholder='example@mail.com'
 							value={email}
-							onChange={(e) => setEmail(e.target.value)}
+							placeholder='Email'
+							onChange={setEmail}
 						/>
 					</section>
 
@@ -66,23 +99,21 @@ function SignIn() {
 						<div>
 							<label>Password</label>
 						</div>
-						<input
+						<Input
 							type='password'
 							id='password'
-							//  ref={passwordRef}
 							htmlFor='password'
-							placeholder='*******'
-							value={password}
-							required
-							onChange={(e) => setPassword(e.target.value)}
+							value={email}
+							placeholder='Password'
+							onChange={setPassword}
 						/>
 					</section>
 					<section className='form__btn'>
 						{token ? (
 							<Redirect to='/shop' />
 						) : (
-							<Button type='submit' name='button' loading={loading}>
-									SignIn
+							<Button type='submit' name='button' disabled={disabled} loading={loading}>
+								SignIn
 							</Button>
 						)}
 					</section>
