@@ -1,10 +1,11 @@
 import './Cart.css'
-import { addToCart, removeCart } from '../../actions/cartAction'
+import { addToCart, removeCart } from '../../reducers/cartSlice'
 import {useDispatch} from 'react-redux'
 
 
-function Cart ({cartProduct}) {
-	const { name, image, price, quantity } = cartProduct
+function Cart ({cartItem}) {
+	
+	const { name, image, price, quantity } = cartItem
 	
 const dispatch = useDispatch()
 
@@ -20,14 +21,14 @@ const dispatch = useDispatch()
 						<div className='span__icon'>
 							<span
 								className='cart__btn'
-								onClick={() => dispatch(removeCart(cartProduct))}>
-								➖
+								onClick={() => dispatch(removeCart(cartItem))}>
+								-
 							</span>
 							<span>{quantity}</span>
 							<span
 								className='cart__btn'
-								onClick={() => dispatch(addToCart(cartProduct))}>
-								➕
+								onClick={() => dispatch(addToCart(cartItem))}>
+								+
 							</span>
 						</div>
 					</div>

@@ -1,15 +1,15 @@
 import './signIn.css';
 import { Link } from 'react-router-dom';
-import { useState,useCallback,useEffect} from 'react';
-import { Toaster} from 'react-hot-toast';
+import { useState, useCallback, useEffect } from 'react';
+import { Toaster } from 'react-hot-toast';
 import Button from '../../components/Button/Button';
-import BtnSpinner from '../../shared/BtnSpinner/btnSpinner';
+// import BtnSpinner from '../../shared/BtnSpinner/btnSpinner';
 import { useDispatch, useSelector } from 'react-redux';
-import { signInUser } from '../../actions/userAction';
+import { signInUser } from '../../reducers/userSlice';
 import { Redirect } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { validate } from 'email-validator';
-import Input  from '../../components/Input';
+import Input from '../../components/Input';
 
 function SignIn() {
 	const [email, setEmail] = useState('');
@@ -17,47 +17,44 @@ function SignIn() {
 	const [loading, setLoading] = useState(false);
 	const [disabled, setDisabled] = useState(false);
 	const [dirty, setDirty] = useState(false);
+
 	const dispatch = useDispatch();
 
 	const user = useSelector((state) => state.user);
-	const {token} = user;
-	
+	const { token } = user;
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
 		if (!dirty && !disabled) {
 			setDirty(true);
 		}
+
+		const data = {
+			email: email,
+			password: password,
+		};
+		toast.success('Successfully Signed in!');
 		try {
 			setLoading(true);
-			dispatch(signInUser(email, password));
-			toast.success('Successfully Signed in!');
+			dispatch(signInUser(data));
+
 			setLoading(false);
 		} catch ({ error }) {
 			setLoading(false);
-			console.log(error);
 		}
-		
-		
-		// setEmail('');
-		// setPassword('');
 	};
 
-		 const handleValidation = useCallback(() => {
-				const validPassword = /^(?=.*[a-zA-Z])(?=.*[0-9])/.test(password);
+	const handleValidation = useCallback(() => {
+		const validPassword = /^(?=.*[a-zA-Z])(?=.*[0-9])/.test(password);
 
-				if (dirty) {
-					setDisabled(
-						!validate(email) || password.length < 7 || !validPassword
-					);
-				}
-			}, [email, password, dirty]);
+		if (dirty) {
+			setDisabled(!validate(email) || password.length < 7 || !validPassword);
+		}
+	}, [email, password, dirty]);
 
-			useEffect(() => {
-				handleValidation();
-			}, [handleValidation]);
-
-
+	useEffect(() => {
+		handleValidation();
+	}, [handleValidation]);
 
 	return (
 		<>
@@ -87,11 +84,11 @@ function SignIn() {
 
 						<Input
 							type='email'
-							id='email'
 							htmlFor='email'
-							value={email}
+							value={email || ''}
 							placeholder='Email'
 							onChange={setEmail}
+							name='email'
 						/>
 					</section>
 
@@ -101,18 +98,22 @@ function SignIn() {
 						</div>
 						<Input
 							type='password'
-							id='password'
 							htmlFor='password'
-							value={email}
+							value={password || ''}
 							placeholder='Password'
 							onChange={setPassword}
+							name='password'
 						/>
 					</section>
 					<section className='form__btn'>
 						{token ? (
 							<Redirect to='/shop' />
 						) : (
-							<Button type='submit' name='button' disabled={disabled} loading={loading}>
+							<Button
+								type='submit'
+								name='button'
+								disabled={disabled}
+								loading={loading}>
 								SignIn
 							</Button>
 						)}
@@ -123,7 +124,9 @@ function SignIn() {
 					{/* <Link className='forget--link' to='/forget-email'>Forget Email?</Link> */}
 				</section>
 				<section className='signup__link'>
-					<Link className='forget__link' to='/signup'>
+					<Link
+						className='forget__link'
+						to='/signup'>
 						Not a member?Join us!
 					</Link>
 				</section>

@@ -3,7 +3,7 @@ import './navBar.css'
 import NavData from './navData'
 import CartIcon from '../CartIcon/cartIcon'
 import {useDispatch, useSelector } from 'react-redux'
-import { signOutUser } from '../../actions/userAction'
+import { signOutUser } from '../../reducers/userSlice'
 
 
 
@@ -17,6 +17,7 @@ function NavBar () {
     
      const user = useSelector((state) => state.user)
     const { users, token } = user
+
     return (
 			<>
 				<nav className='container-fluid nav'>
@@ -47,7 +48,7 @@ function NavBar () {
 
 						{token ? (
 							<NavLink to='#' className='nav__link'>
-								{users?.name?.toUpperCase()}
+								{users?.data?.user?.name?.toUpperCase()}
 							</NavLink>
 						) : (
 							<NavLink to='/login' className='nav__link'>
@@ -63,8 +64,5 @@ function NavBar () {
 		);
 }
 
-//    const mapStateToProps = ({ menu:{hidden}}) => ({
-//       hidden
-//   })
 
 export default NavBar;

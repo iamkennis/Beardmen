@@ -1,19 +1,15 @@
 import './Checkout.css';
 import Cart from '../Cart/Cart';
-import { connect, useSelector } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
-import { selectCartProducts, selectCartTotal } from '../../Utils/cartSelector';
+import { useSelector } from 'react-redux';
 import Button from '../../components/Button/Button';
 import { Redirect } from 'react-router-dom';
 
-function CheckOut({ cartProducts, total }) {
-	const user = useSelector((state) => state.user);
-	const { token } = user;
-
-	if (cartProducts === 0) {
-		
-							
-	}
+function CheckOut() {
+	const {token} = useSelector((state) => state.user);
+	const {cartItems} = useSelector((state) => state.cart);
+	
+	const totalPrice = cartItems?.reduce((calcQuantity, cartItem) =>
+	calcQuantity + cartItem.quantity * cartItem.price, 0)
 	
 	return (
 		<section className='checkout'>
@@ -25,14 +21,15 @@ function CheckOut({ cartProducts, total }) {
 			<div>
 				<div className='checkout__modal'>
 					<div>
-						<spa>
-							{cartProducts.length === 0 && (
+						<span>
+							{cartItems?.length === 0 && (
 								<p className='checkout__p-text'>Your cart is empty</p>
 							)}
-						</spa>
-						{cartProducts.map((cartProduct, idx) => (
-							<div>
-								<Cart key={cartProduct.id} cartProduct={cartProduct} />
+						</span>
+						{cartItems.map((cartItem) => (
+							
+							<div key={cartItem.id}>
+								<Cart  cartItem={cartItem} />
 								<hr />
 							</div>
 						))}
@@ -40,7 +37,7 @@ function CheckOut({ cartProducts, total }) {
 				</div>
 				<div className='checkout-sm'>
 					<div className='checkout__span'>
-						<span>Total:#{total}</span>
+						<span>Total:₦{totalPrice}</span>
 					</div>
 					<div className='checkout-btn'>
 						{token ? <Button>Check Out</Button> : <Redirect to='/login' />}
@@ -52,9 +49,5 @@ function CheckOut({ cartProducts, total }) {
 	);
 }
 
-const mapStateToProps = createStructuredSelector({
-	cartProducts: selectCartProducts,
-	total: selectCartTotal,
-});
 
-export default connect(mapStateToProps)(CheckOut);
+export default CheckOut;
