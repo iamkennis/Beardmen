@@ -3,7 +3,7 @@ import { NavLink} from 'react-router-dom'
 import './sideNavbar.css'
 import NavData from '../NavBar/navData'
 import {useDispatch, useSelector } from 'react-redux'
-import { signOutUser } from '../../actions/userAction'
+import { signOutUser } from '../../reducers/userSlice'
 import {useState} from 'react';
 
 function SideNav() {
@@ -19,7 +19,7 @@ function SideNav() {
     }
     
      const user = useSelector((state) => state.user)
-  const { userDetails} = user
+  const { users} = user
     return (
 			<>
 				<FaGripLines className='sidenav__icon-bar' onClick={toggleMenu} />
@@ -35,7 +35,7 @@ function SideNav() {
 									</NavLink>
 								);
 							})}
-							{userDetails ? (
+							{users ? (
 								<NavLink
 									to='#signout'
 									onClick={signoutHandler}
@@ -48,9 +48,9 @@ function SideNav() {
 								</NavLink>
 							)}
 
-							{userDetails ? (
+							{users ? (
 								<NavLink to='#' className='sidenav__link'>
-									{userDetails.name}
+								{users?.data?.user?.name?.toUpperCase()}
 								</NavLink>
 							) : (
 								<NavLink to='/login' className='sidenav__link'>

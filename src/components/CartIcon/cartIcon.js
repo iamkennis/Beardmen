@@ -1,26 +1,28 @@
 import './cartIcon.css'
 import { Link } from 'react-router-dom';
 import { FaShoppingCart } from "react-icons/fa";
-import { connect } from 'react-redux'
-import {createStructuredSelector} from 'reselect'
-import { selectCartProductCount } from '../../Utils/cartSelector'
+import {useSelector} from 'react-redux'
+// import {createStructuredSelector} from 'reselect'
+// import { selectCartProductCount } from '../../Utils/cartSelector'
 // import {} from '../../actions/cartAction'
 
 
-function CartIcon ({productCount}) {
+function CartIcon () {
+const {cartItems} = useSelector((state) => state.cart)
+const amount = cartItems?.reduce((calcQuantity, cartItem,i) =>
+     calcQuantity + cartItem.quantity,
+0)
+
     return (
         <div>
             
             <Link to='./checkout'>
                 <FaShoppingCart className="icon__cart" />
             </Link>
-            <span className='icon__number'>{productCount}</span>
+            <span className='icon__number'>{amount}</span>
         </div>
     )
 }
 
-const mapStateToProps = createStructuredSelector ({
-    productCount: selectCartProductCount
-});
 
-export default connect(mapStateToProps)(CartIcon);
+export default CartIcon;
