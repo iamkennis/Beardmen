@@ -1,10 +1,10 @@
 import './signUp.css';
 import { useState, useCallback,useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { signUpUser } from '../../actions/userAction';
-import BtnSpinner from '../../shared/BtnSpinner/btnSpinner';
+import { signUpUser } from '../../reducers/userSlice';
+// import BtnSpinner from '../../shared/BtnSpinner/btnSpinner';
 import { Redirect } from 'react-router-dom';
-import toast from 'react-hot-toast';
+// import toast from 'react-hot-toast';
 import { validate } from 'email-validator';
 import Input from '../../components/Input'
 
@@ -30,13 +30,20 @@ function SignUp() {
 		if (!dirty && !disabled) {
 			setDirty(true)
 		}
+		const data = {
+			name: name,
+			lastName: lastName,
+			email: email,
+			password: password
+			}
 		try {
 			setLoading(true)
-            dispatch(signUpUser(name, lastName, email, password));
+            dispatch(signUpUser(data));
+			
 			setLoading(false);
 		} catch ({ error }) {
 			setLoading(false)
-			console.log(error)
+			
 		}
 		
 		
@@ -123,7 +130,7 @@ function SignUp() {
 							type='password'
 							id='password'
 							htmlFor='password'
-							value={email}
+							value={password}
 							placeholder='Password'
 							onChange={setPassword}
 						/>
@@ -136,7 +143,7 @@ function SignUp() {
 							<Button type='submit' name='button' loading={loading} disabled={disabled}>
 								Sign Up
 							</Button>
-						)}
+						)} 
 					</section>
 				</form>
 			</div>

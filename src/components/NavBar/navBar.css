@@ -41,7 +41,7 @@
   color: #ffffff;
   font-weight: 800;
   width: 80px;
-  position: fixed;
+  position: absolute;
   top: 20px;
   left: 0;
   margin: 15px 35px auto;

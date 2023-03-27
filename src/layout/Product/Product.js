@@ -1,30 +1,28 @@
 import './Product.css';
-import { useEffect } from 'react';
-import { addToCart } from '../../actions/cartAction';
-import { getProducts } from '../../actions/productAction';
-import { useDispatch, useSelector } from 'react-redux'
+import { useEffect} from 'react';
+import { addToCart } from '../../reducers/cartSlice';
+// import { getProducts } from '../../actions/productAction';
+import { useDispatch, useSelector, } from 'react-redux'
 import Spinner from '../../components/Spinner/Spinner';
+import { getProduct } from '../../reducers/productSlice'
 
 function Product() {
 	const dispatch = useDispatch();
 
-	const product = useSelector((state) => state.products);
-	const { products, loading } = product;
+	const {products, loading } = useSelector((store) => store.product);
 
-	useEffect(() => {
-			dispatch(getProducts());
-		
-	}, [dispatch]);
-
-
+useEffect(() => {
+	dispatch(getProduct())
+},[dispatch])
 
 	return (
 		<>
 			<div className='product__items'>
-				{loading ? (
+				  {loading ? (
 					<Spinner />
-				) : (
-					products?.map((data) => (
+				) : ( 
+				
+					products.products?.map((data) => (
 						<div className='product__lists' key={data._id}>
 			
 							<figure>
@@ -41,12 +39,13 @@ function Product() {
 							{/* </div> */}
 							<button
 								className='products__btn'
-								onClick={() => dispatch(addToCart(data))}>
+								onClick={() => dispatch(addToCart(data))}
+								>
 								Add
 							</button>
 						</div>
 					))
-				)}
+				)} 
 			</div>
 		</>
 	);
