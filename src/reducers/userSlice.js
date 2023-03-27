@@ -5,7 +5,7 @@ import api from '../utils/api.js'
 const initialState = {
   users: { userDetails: localStorage.getItem('userDetails') ? JSON.parse(localStorage.getItem('userDetails')) : null},
   token: null,
-  error: null
+  error: null,
 }
 
 
