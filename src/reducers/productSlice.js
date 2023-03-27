@@ -13,7 +13,7 @@ const initialState = {
 export const getProduct = createAsyncThunk("product/getProduct", async () => {
   // const response = await fetch("https://beardmen-store-api.herokuapp.com/api/products")
   try {
-		const  data  = await axios.get("http://localhost:7000/api/products")
+		const  data  = await axios.get("https://purple-buffalo-wear.cyclic.app/api/products")
 	   return data.data
 	} catch (error) {
 	return error.response && error.response.data.message
