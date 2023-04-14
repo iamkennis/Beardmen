@@ -3,7 +3,7 @@ import toast from 'react-hot-toast'
 import api from '../utils/api.js'
 
 const initialState = {
-  users: { userDetails: localStorage.getItem('userDetails') ? JSON.parse(localStorage.getItem('userDetails')) : null},
+  users: null,
   token: null,
   error: null
 }
@@ -23,7 +23,6 @@ export const signUpUser = createAsyncThunk("user/signup", async ({name, lastName
     );
   console.log(res.data)
       toast.success('Successfully Signed up!');
-      localStorage.setItem('userDetails', JSON.stringify(res.data));
       return res.data
 } catch (error) {
   toast.error(error?.response?.data?.message);
@@ -38,13 +37,10 @@ export const signInUser = createAsyncThunk("users/signin", async ({email,passwor
   try {
     const res = await api.post(
       '/users/login',{email,password});
-  // console.log(res)
-      toast.success('Successfully Signed in!');
-      // localStorage.setItem('userDetails', JSON.stringify(res.data));
+     toast.success('Successfully Signed in!');
      return res.data
 } catch (error) {
   toast.error(error?.response?.data?.message);
-  // console.log(error?.response)
 }
 
 })
@@ -54,7 +50,7 @@ name: 'users',
 initialState,
 reducers: { 
    signOutUser: (state) => {
-  state.users = localStorage.removeItem('userDetails');
+  state.users = [];
   state.token = null;
    }
 },
@@ -63,7 +59,7 @@ extraReducers: {
   [signUpUser.fulfilled]: (state,action) => {
      state.loading = false
      state.users = action.payload
-  state.userDetails = action.payload
+  // state.userDetails = action.payload
   state.token = action.payload
   },
   [signUpUser.rejected]: (state,action) => {
@@ -72,9 +68,13 @@ extraReducers: {
  },
  [signInUser.fulfilled]: (state,action) => {
   state.loading = false
-  state.users = action.payload
-  state.userDetails = action.payload
-  state.token = action.payload
+  state.users = action.payload?.data?.user
+  // state.userDetails = action.payload
+  state.token = action.payload?.token
+},
+[signInUser.rejected]: (state,action) => {
+  state.loading = false
+  state.error = action.payload?.error
 },
 }
 })

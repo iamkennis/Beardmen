@@ -48,7 +48,7 @@ function NavBar () {
 
 						{token ? (
 							<NavLink to='#' className='nav__link'>
-								{users?.data?.user?.name?.toUpperCase()}
+								{users?.name?.toUpperCase()}
 							</NavLink>
 						) : (
 							<NavLink to='/login' className='nav__link'>

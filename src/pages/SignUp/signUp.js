@@ -22,10 +22,11 @@ function SignUp() {
 
 	const dispatch = useDispatch();
 
-	const user = useSelector((state) => state.user);
-	const {token} = user;
+	const users = useSelector((state) => state.user);
+	const {token} = users;
 
 	const handleSubmit = (e) => {
+		setLoading(true)
 		e.preventDefault();
 		if (!dirty && !disabled) {
 			setDirty(true)
@@ -37,16 +38,11 @@ function SignUp() {
 			password: password
 			}
 		try {
-			setLoading(true)
-            dispatch(signUpUser(data));
-			
+            dispatch(signUpUser(data));		
 			setLoading(false);
 		} catch ({ error }) {
 			setLoading(false)
-			
 		}
-		
-		
 	};
 
 	 const handleValidation = useCallback(() => {
@@ -67,7 +63,7 @@ function SignUp() {
 	return (
 		<div className='container-fluid signup__box'>
 			<Toaster
-				position='top-center'
+				position='bottom-right'
 				reverseOrder={false}
 				gutter={8}
 				toastOptions={{
@@ -84,54 +80,46 @@ function SignUp() {
 				<p className='signup__p'>Please sign up below to continue</p>
 				<form className='signup__form' onSubmit={handleSubmit}>
 					<section>
-						<div>
-							<label>Name</label>
-						</div>
 						<Input
 							type='name'
 							htmlFor='name'
 							value={name}
 							placeholder='Name'
+							label='Name'
 							required
 							onChange={setName}
 						/>
 					</section>
 					<section>
-						<div>
-							<label htmlFor='lastname'>Last Name</label>
-						</div>
 						<Input
 							type='lastname'
 							id='lastname'
 							htmlFor='lastname'
 							value={lastName}
 							placeholder='Last Name'
+							label='Last Name'
 							onChange={setLastName}
 						/>
 					</section>
 					<section className='signup__container'>
-						<div>
-							<label htmlFor='email'>Email</label>
-						</div>
 						<Input
 							type='email'
 							id='email'
 							htmlFor='email'
 							value={email}
 							placeholder='Email'
+							label='Email'
 							onChange={setEmail}
 						/>
 					</section>
 					<section className='signup__container'>
-						<div>
-							<label htmlFor='password'>Password</label>
-						</div>
 						<Input
 							type='password'
 							id='password'
 							htmlFor='password'
 							value={password}
 							placeholder='Password'
+							label='Password'
 							onChange={setPassword}
 						/>
 					</section>

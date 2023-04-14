@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
-import CheckOut from './layout/Checkout/Checkout';
+import CartBox from './layout/CartBox/CartBox';
+import CheckOut from './layout/CheckOut/CheckOut';
 import Shop from './pages/Shop/Shop'; 
 import SignIn from './pages/SignIn/signIn';
 import SignUp from './pages/SignUp/signUp'
@@ -21,6 +22,7 @@ function App () {
 						<Route path='/login' component={SignIn} />
 						<Route path='/shop' component={Shop} />
                         <Route path='/product/:id' component={Product} />
+						<Route path='/cart' component={CartBox} />
 						<Route path='/checkout' component={CheckOut} />
 					</Switch>
 				</AppLayout>

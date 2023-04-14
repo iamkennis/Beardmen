@@ -20,10 +20,11 @@ function SignIn() {
 
 	const dispatch = useDispatch();
 
-	const user = useSelector((state) => state.user);
-	const { token } = user;
+	const users = useSelector((state) => state?.user);
+	const { token} = users;
 
 	const handleSubmit = async (e) => {
+		setLoading(true);
 		e.preventDefault();
 		if (!dirty && !disabled) {
 			setDirty(true);
@@ -33,11 +34,8 @@ function SignIn() {
 			email: email,
 			password: password,
 		};
-		toast.success('Successfully Signed in!');
 		try {
-			setLoading(true);
 			dispatch(signInUser(data));
-
 			setLoading(false);
 		} catch ({ error }) {
 			setLoading(false);
@@ -58,8 +56,9 @@ function SignIn() {
 
 	return (
 		<>
+			<section className='container-fluid signin__box'>
 			<Toaster
-				position='top-center'
+				position='bottom-right'
 				reverseOrder={false}
 				gutter={8}
 				toastOptions={{
@@ -72,30 +71,22 @@ function SignIn() {
 					},
 				}}
 			/>
-
-			<section className='container-fluid signin__box'>
 				<h1 className='sign__h1'>Welcome back!</h1>
 				<p className='sign__p'>Please sign in below to continue</p>
 				<form onSubmit={handleSubmit}>
-					<section>
-						<div>
-							<label>Email</label>
-						</div>
-
+					<section>	
 						<Input
 							type='email'
 							htmlFor='email'
 							value={email || ''}
 							placeholder='Email'
+							label="Email"
 							onChange={setEmail}
 							name='email'
 						/>
 					</section>
 
 					<section>
-						<div>
-							<label>Password</label>
-						</div>
 						<Input
 							type='password'
 							htmlFor='password'
@@ -103,6 +94,7 @@ function SignIn() {
 							placeholder='Password'
 							onChange={setPassword}
 							name='password'
+							label="Password"
 						/>
 					</section>
 					<section className='form__btn'>
