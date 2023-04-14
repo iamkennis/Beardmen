@@ -16,7 +16,7 @@ const amount = cartItems?.reduce((calcQuantity, cartItem,i) =>
     return (
         <div>
             
-            <Link to='./checkout'>
+            <Link to='./cart'>
                 <FaShoppingCart className="icon__cart" />
             </Link>
             <span className='icon__number'>{amount}</span>

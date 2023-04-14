@@ -3,7 +3,7 @@ import React from 'react';
 
 
 export default function Input(props) {
-    const { value, onChange, className, ...rest } = props
+    const { value, onChange, className,label, ...rest } = props
     
     function handleChange(e) {
         if (onChange) {
@@ -13,7 +13,10 @@ export default function Input(props) {
     }
 
     return (
-			<label>
+			<section>
+                <div>
+				 <label>{label}</label>
+				</div>
 				<input
 					autoComplete='off'
 					autoCorrect='off'
@@ -23,6 +26,6 @@ export default function Input(props) {
                 onChange={handleChange}
                 {...rest}
 				/>
-			</label>
+			</section>
 		);
 }
